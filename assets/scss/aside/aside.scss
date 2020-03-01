@@ -1,0 +1,89 @@
+.aside {
+  width: 20%;
+  height: 500px;
+
+  &__section {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    background-color: lightgreen;
+  }
+
+  &__section-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+  }
+
+  &__items {
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+    border-bottom: 1px solid black;
+  }
+
+  &__item {
+    display: flex;
+    height: 50px;
+    padding-left: 10px;
+  }
+
+  &__item-logo {
+    width: 55px;
+    height: 40px;
+
+    &-foot {
+      background: url("../../images/aside/sports/foot.png") no-repeat;
+    }
+
+    &-basket {
+      background: url("../../images/aside/sports/basket.png") no-repeat;
+    }
+
+    &-tennis {
+      background: url("../../images/aside/sports/tennis.png") no-repeat;
+    }
+
+    &-ldc {
+      background: url("../../images/aside/foot/leagues/ldc.png") no-repeat;
+    }
+
+    &-europa {
+      background: url("../../images/aside/foot/leagues/europa.png") no-repeat;
+    }
+
+    &-l1 {
+      background: url("../../images/aside/foot/leagues/l1.png") no-repeat;
+    }
+
+    &-l2 {
+      background: url("../../images/aside/foot/leagues/l2.png") no-repeat;
+    }
+
+    &-ligua {
+      background: url("../../images/aside/foot/leagues/ligua.png") no-repeat;
+    }
+
+    &-premierleague {
+      background: url("../../images/aside/foot/leagues/premierleague.png") no-repeat;
+    }
+
+    &-seria {
+      background: url("../../images/aside/foot/leagues/seria.png") no-repeat;
+    }
+  }
+
+  &__item-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

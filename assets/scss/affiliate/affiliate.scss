@@ -1,0 +1,28 @@
+.affiliate {
+  width: 100%;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  //background-image: url("../../images/affiliate_bg.png");
+
+  &__item {
+    height: 50px;
+    padding: 5%;
+
+    &__link {
+
+    }
+
+    &--img {
+      width: 100%;
+      height: 50px;
+      border-radius: 15px;
+      box-shadow: 5px 5px 10px black;
+
+      &:hover {
+        background-size: 20%;
+      }
+    }
+  }
+}

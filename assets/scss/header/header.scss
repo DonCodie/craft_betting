@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  height: auto;
+  &__banner {
+    width: 100%;
+    //height: 450px;
+    &--img {
+      width: 100%;
+      height: 300px;
+
+      background-color: lightblue;
+    }
+  }
+  //&__menu {
+  //  width: 100%;
+  //  height: 50px;
+  //  background-color: lightgreen;
+  //}
+}
+

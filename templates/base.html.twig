@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Accueil{% endblock %}</title>
+        <link rel="icon" href="{{ asset('build/favicon/favicon.png') }}" type="image/x-icon" />
+        {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    {% block header %}
+        <header class="header">
+            <div class="header__banner">
+                <div class="header__banner--img">
+                    <img src="{{ asset('build/banner/banner.png') }}" alt="banner" class="header__banner--img"/>
+                </div>
+            </div>
+            {#        <div class="header__menu">#}
+            {#            MENU#}
+            {#        </div>#}
+        </header>
+    {% endblock %}
+    {% block affiliate %}
+        <div class="affiliate">
+            <div class="affiliate__item">
+                <a href="test.com">
+                    <img src="{{ asset('build/affiliate/betclic.png') }}" alt="banner" class="affiliate__item--img"/>
+                </a>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/winamax.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/pmu.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/unibet.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/betclic.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/winamax.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/pmu.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/unibet.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/betclic.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/winamax.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+            <div class="affiliate__item">
+                <img src="{{ asset('build/affiliate/pmu.png') }}" alt="banner" class="affiliate__item--img"/>
+            </div>
+        </div>
+    {% endblock %}
+    {% block infos %}
+        <div class="infos">
+            <h1>Craft Betting</h1>
+            <span class="infos__para">Les artisans du betting vous proposent les meilleurs pronostics du moment</span>
+        </div>
+    {% endblock %}
+        {% block container %}
+            <div class="container">
+                {% block aside %}{% endblock %}
+                {% block content %}{% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block footer %}{% endblock %}
+        {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
     </body>
 </html>
