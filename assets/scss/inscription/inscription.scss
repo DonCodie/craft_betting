@@ -1,0 +1,35 @@
+.inscription {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  color: $gold;
+  line-height: 70px;
+  border-bottom: 3px solid #FFD700;
+  animation: textgrowth linear 0.5s infinite alternate;
+
+  &:before {
+    content: url("../../images/inscription/arrow.png");
+    position: absolute;
+    top: 10%;
+    left: 19%;
+  }
+
+  &:after {
+    content: url("../../images/inscription/arrow.png");
+    position: absolute;
+    top: 10%;
+    right: 19%;
+  }
+}
+
+/* Animation */
+@keyframes textgrowth {
+  0% {
+    font-size: 25px;
+  }
+  100% {
+    font-size: 25.5px;
+  }
+}
