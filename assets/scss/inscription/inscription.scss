@@ -1,4 +1,25 @@
 .inscription {
+  @media only screen and (max-width: $mobile) {
+    font-size: 14.5px;
+    line-height: 15px;
+    padding: 10px 0;
+  }
+
+  @media only screen and (min-width: $desktop) {
+    font-size: 25px;
+    line-height: 70px;
+  }
+
+  &__para {
+    @media only screen and (max-width: $mobile) {
+      width: 75%;
+      margin: 0 auto;
+    }
+    @media only screen and (min-width: $desktop) {
+      width: 100%;
+    }
+  }
+
   width: 100%;
   height: auto;
   position: relative;
@@ -11,24 +32,50 @@
   &:before {
     content: url("../../images/inscription/arrow.png");
     position: absolute;
-    top: 10%;
-    left: 19%;
+    @media only screen and (max-width: $mobile) {
+      top: 25%;
+      left: 2%;
+    }
+    @media only screen and (min-width: $desktop) {
+      top: 10%;
+      left: 19%;
+    }
   }
 
   &:after {
     content: url("../../images/inscription/arrow.png");
     position: absolute;
-    top: 10%;
-    right: 19%;
+    @media only screen and (max-width: $mobile) {
+      top: 25%;
+      right: 2%;
+    }
+    @media only screen and (min-width: $desktop) {
+      top: 10%;
+      right: 19%;
+    }
   }
+
 }
 
 /* Animation */
-@keyframes textgrowth {
-  0% {
-    font-size: 25px;
+@media only screen and (max-width: $mobile) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 14.5px;
+    }
+    100% {
+      font-size: 15px;
+    }
   }
-  100% {
-    font-size: 25.5px;
+}
+
+@media only screen and (min-width: $desktop) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 25px;
+    }
+    100% {
+      font-size: 25.5px;
+    }
   }
 }

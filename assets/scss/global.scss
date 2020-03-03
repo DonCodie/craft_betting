@@ -1,11 +1,16 @@
 /* MIXINS */
-@import "./reset.scss";
+
+@import "./breakpoint.scss";
 @import "./colors.scss";
 @import "./common.scss";
 @import "./fonts.scss";
+@import "./reset.scss";
+
 /* BLOCKS */
+
+@import "./affiliate/affiliate.scss";
+@import "./aside/aside.scss";
+@import "./container/container.scss";
 @import "./header/header.scss";
 @import "./inscription/inscription.scss";
-@import "./affiliate/affiliate.scss";
-@import "./container/container.scss";
-@import "./aside/aside.scss";
+@import "./main/main.scss";

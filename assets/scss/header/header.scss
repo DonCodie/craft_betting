@@ -6,19 +6,22 @@
     margin: 0 auto;
 
     &--img-div {
-      height: 300px;
-    }
-
-    &--img {
-      width: 100%;
-      height: 300px;
+      @media only screen and (max-width: $mobile) {
+        height: 175px;
+        background: url("../../images/header/header_mobile.png") no-repeat;
+        background-position: center;
+      }
+      @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+        height: 300px;
+        background: url("../../images/header/header.png") no-repeat;
+        background-position: center;
+      }
+      @media only screen and (min-width: $desktop) {
+        height: 300px;
+        background: url("../../images/header/header.png") no-repeat;
+        background-position: center;
+      }
     }
   }
-
-  //&__menu {
-  //  width: 100%;
-  //  height: 50px;
-  //  background-color: lightgreen;
-  //}
 }
 
