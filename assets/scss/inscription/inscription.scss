@@ -1,13 +1,23 @@
 .inscription {
+  width: 100%;
+  height: auto;
+  position: relative;
+  line-height: 70px;
+  text-align: center;
+  background-color: black;
+  color: $green;
+  animation: textgrowth linear 0.5s infinite alternate;
+
   @media only screen and (max-width: $mobile) {
     font-size: 14.5px;
-    line-height: 15px;
+    line-height: 20px;
     padding: 10px 0;
   }
-
+  @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    font-size: 15px;
+  }
   @media only screen and (min-width: $desktop) {
     font-size: 25px;
-    line-height: 70px;
   }
 
   &__para {
@@ -15,25 +25,21 @@
       width: 75%;
       margin: 0 auto;
     }
-    @media only screen and (min-width: $desktop) {
+    @media only screen and (min-width: $tablet-min) {
       width: 100%;
     }
   }
 
-  width: 100%;
-  height: auto;
-  position: relative;
-  text-align: center;
-  background-color: black;
-  color: $green;
-  line-height: 70px;
-  animation: textgrowth linear 0.5s infinite alternate;
-
   &:before {
     content: url("../../images/inscription/arrow.png");
     position: absolute;
+
     @media only screen and (max-width: $mobile) {
       top: 25%;
+      left: 2%;
+    }
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      top: 15%;
       left: 2%;
     }
     @media only screen and (min-width: $desktop) {
@@ -45,8 +51,13 @@
   &:after {
     content: url("../../images/inscription/arrow.png");
     position: absolute;
+
     @media only screen and (max-width: $mobile) {
       top: 25%;
+      right: 2%;
+    }
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      top: 15%;
       right: 2%;
     }
     @media only screen and (min-width: $desktop) {
@@ -54,7 +65,6 @@
       right: 19%;
     }
   }
-
 }
 
 /* Animation */
@@ -65,6 +75,17 @@
     }
     100% {
       font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 15px;
+    }
+    100% {
+      font-size: 15.5px;
     }
   }
 }

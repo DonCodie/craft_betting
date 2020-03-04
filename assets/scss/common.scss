@@ -13,3 +13,37 @@ h1, h3 {
 .hidden {
   display: none;
 }
+
+.show {
+  display: block;
+}
+
+@media only screen and (max-width: $mobile) {
+  .mobile-show {
+    display: block;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .tablet-show {
+    display: block;
+  }
+
+  .tablet-hide {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .desktop-show {
+    display: block;
+  }
+
+  .desktop-hide {
+    display: none;
+  }
+}
