@@ -6,7 +6,7 @@
   text-align: center;
   background-color: black;
   color: $green;
-  //animation: textgrowth linear 0.5s infinite alternate;
+  animation: textgrowth linear 0.5s infinite alternate;
 
   @media only screen and (max-width: $mobile) {
     font-size: 14.5px;
