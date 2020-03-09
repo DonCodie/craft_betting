@@ -1,0 +1,24 @@
+.breadcrumb {
+  padding: 10px 20px;
+  &__text {
+    display: flex;
+    align-items: center;
+    &-home {
+
+    }
+
+    &-logo {
+      width: 25px;
+      height: 25px;
+      padding-right: 3px;
+    }
+
+    &-path {
+      letter-spacing: 1px;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+  }
+}

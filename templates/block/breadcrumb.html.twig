@@ -1,0 +1,19 @@
+<div class="breadcrumb">
+    <p class="breadcrumb__text">
+        <span class="breadcrumb__text-home">
+            <a href="{{ path('homepage') }}">
+                <img src="{{ asset('build/breadcrumb/home_logo.png') }}" alt="home_logo" class="breadcrumb__text-logo"/>
+            </a>
+        </span>
+        {% for breadcrumb in breadcrumb() %}
+            {% if breadcrumb.url != 'accueil' %}
+                <span class="breadcrumb__text-path">
+                    {{ breadcrumb.separator }}
+                    <a href="{{ breadcrumb.url }}" class="breadcrumb__text-link">
+                        {{ breadcrumb.url }}
+                    </a>
+            {% endif %}
+            </span>
+        {% endfor %}
+    </p>
+</div>

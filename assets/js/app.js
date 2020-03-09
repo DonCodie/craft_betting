@@ -8,9 +8,10 @@
 // any CSS you import will output into a single css file (app.scss in this case)
 import '../scss/global.scss';
 
-// Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
-//import $ from 'jquery';
+// require jQuery normally
+const $ = require('jquery');
 
-// const $ = require('jquery');
+// create global $ and jQuery variables
+global.$ = global.jQuery = $;
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
