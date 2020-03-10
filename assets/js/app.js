@@ -8,10 +8,4 @@
 // any CSS you import will output into a single css file (app.scss in this case)
 import '../scss/global.scss';
 
-// require jQuery normally
-const $ = require('jquery');
-
-// create global $ and jQuery variables
-global.$ = global.jQuery = $;
-
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+//console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

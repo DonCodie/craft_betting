@@ -1,3 +1,5 @@
+
+
 <div class="footer">
     <div class="footer__grid">
         <div>01</div>
@@ -15,9 +17,6 @@
     </div>
 </div>
 
-<script>
-    var year = new Date().getFullYear();
-    document.getElementsByClassName('footer__copyright-year')[0].innerText = year;
-
-    $('span.footer__copyright-year').innerText = year;
-</script>
+{% block javascripts %}
+    {{ encore_entry_script_tags('footer') }}
+{% endblock %}
