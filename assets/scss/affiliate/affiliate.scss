@@ -42,23 +42,36 @@
 
   &__infos-highlight {
     text-align: center;
-    font-size: 2em;
+    //font-size: 2em;
     color: #fff;
 
   }
 
   &__infos-title {
-    font-size: 2em;
     letter-spacing: 10px;
-    font-family: Monoton, serif;
+    font-family: 'Comfortaa', cursive;
+    vertical-align: middle;
+    line-height: 50px;
 
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
+    &-first {
+      font-size: 100px;
+      line-height: 100px;
+    }
 
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate;
+    &-rest {
+      font-size: 40px;
+      line-height: 105px;
+      vertical-align: bottom;
+      margin-left: -45px;
+    }
+
+    //-webkit-transition: all 0.5s;
+    //-moz-transition: all 0.5s;
+    //transition: all 0.5s;
+    //
+    //-webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+    //-moz-animation: neon1 1.5s ease-in-out infinite alternate;
+    //animation: neon1 1.5s ease-in-out infinite alternate;
   }
 
   &__infos-para {
@@ -70,29 +83,337 @@
 
 /* Animation */
 
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
-  }
-}
+//@-webkit-keyframes neon1 {
+//  from {
+//    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
+//  }
+//  to {
+//    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
+//  }
+//}
+//
+//@-moz-keyframes neon1 {
+//  from {
+//    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
+//  }
+//  to {
+//    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
+//  }
+//}
+//
+//@keyframes neon1 {
+//  from {
+//    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
+//  }
+//  to {
+//    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
+//  }
+//}
 
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
-  }
-}
-
-@keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px darkblue, 0 0 70px darkblue, 0 0 80px darkblue, 0 0 100px darkblue, 0 0 150px darkblue;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px darkblue, 0 0 35px darkblue, 0 0 40px darkblue, 0 0 50px darkblue, 0 0 75px darkblue;
-  }
-}
+//.box {
+//  position: relative;
+//  width: 200px;
+//  height: 200px;
+//  margin: 0 auto;
+//  border: 3px solid transparent;
+//}
+//
+//.top,
+//.bottom,
+//.left,
+//.right {
+//  position: absolute;
+//  -webkit-animation: 8s linear infinite;
+//  animation: 8s linear infinite;
+//}
+//.top {
+//  top: -3px;
+//  left: -3px;
+//  height: 3px;
+//  -webkit-animation-name: top;
+//  animation-name: top;
+//}
+//@-webkit-keyframes top {
+//  25% {
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//  38% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  50% {
+//    background: #ffdb00;
+//  }
+//  62% {
+//    background: #ffdb00;
+//  }
+//  75% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  88% {
+//    left: auto;
+//    right: -3px;
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//}
+//
+//.bottom {
+//  bottom: -3px;
+//  right: -3px;
+//  height: 3px;
+//  -webkit-animation-name: bottom;
+//  animation-name: bottom;
+//}
+//@-webkit-keyframes bottom {
+//  0% {
+//    width: 0;
+//  }
+//  12% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  25% {
+//    background: #ffdb00;
+//  }
+//  38% {
+//    background: #ffdb00;
+//  }
+//  50% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  62% {
+//    left: -3px;
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//  75% {
+//    background: #ffdb00;
+//  }
+//}
+//
+//.left {
+//  bottom: -3px;
+//  left: -3px;
+//  width: 3px;
+//  -webkit-animation-name: left;
+//  animation-name: left;
+//}
+//@-webkit-keyframes left {
+//  12% {
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  25% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  38% {
+//    background: #ffdb00;
+//  }
+//  50% {
+//    background: #ffdb00;
+//  }
+//  62% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  75% {
+//    top: -3px;
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  88% {
+//    background: #ffdb00;
+//  }
+//}
+//
+//.right {
+//  top: -3px;
+//  right: -3px;
+//  width: 3px;
+//  -webkit-animation-name: right;
+//  animation-name: right;
+//}
+//@-webkit-keyframes right {
+//  38% {
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  50% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  62% {
+//    background: #ffdb00;
+//  }
+//  75% {
+//    background: #ffdb00;
+//  }
+//  88% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  100% {
+//    top: auto;
+//    bottom: -3px;
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//}.box {
+//  position: relative;
+//  width: 200px;
+//  height: 200px;
+//  margin: 0 auto;
+//  border: 3px solid transparent;
+//}
+//
+//.top,
+//.bottom,
+//.left,
+//.right {
+//  position: absolute;
+//  -webkit-animation: 8s linear infinite;
+//  animation: 8s linear infinite;
+//}
+//.top {
+//  top: -3px;
+//  left: -3px;
+//  height: 3px;
+//  -webkit-animation-name: top;
+//  animation-name: top;
+//}
+//@-webkit-keyframes top {
+//  25% {
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//  38% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  50% {
+//    background: #ffdb00;
+//  }
+//  62% {
+//    background: #ffdb00;
+//  }
+//  75% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  88% {
+//    left: auto;
+//    right: -3px;
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//}
+//
+//.bottom {
+//  bottom: -3px;
+//  right: -3px;
+//  height: 3px;
+//  -webkit-animation-name: bottom;
+//  animation-name: bottom;
+//}
+//@-webkit-keyframes bottom {
+//  0% {
+//    width: 0;
+//  }
+//  12% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  25% {
+//    background: #ffdb00;
+//  }
+//  38% {
+//    background: #ffdb00;
+//  }
+//  50% {
+//    width: calc(103%);
+//    background: #ffdb00;
+//  }
+//  62% {
+//    left: -3px;
+//    width: 0;
+//    background: #ffdb00;
+//  }
+//  75% {
+//    background: #ffdb00;
+//  }
+//}
+//
+//.left {
+//  bottom: -3px;
+//  left: -3px;
+//  width: 3px;
+//  -webkit-animation-name: left;
+//  animation-name: left;
+//}
+//@-webkit-keyframes left {
+//  12% {
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  25% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  38% {
+//    background: #ffdb00;
+//  }
+//  50% {
+//    background: #ffdb00;
+//  }
+//  62% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  75% {
+//    top: -3px;
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  88% {
+//    background: #ffdb00;
+//  }
+//}
+//
+//.right {
+//  top: -3px;
+//  right: -3px;
+//  width: 3px;
+//  -webkit-animation-name: right;
+//  animation-name: right;
+//}
+//@-webkit-keyframes right {
+//  38% {
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//  50% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  62% {
+//    background: #ffdb00;
+//  }
+//  75% {
+//    background: #ffdb00;
+//  }
+//  88% {
+//    height: calc(103%);
+//    background: #ffdb00;
+//  }
+//  100% {
+//    top: auto;
+//    bottom: -3px;
+//    height: 0;
+//    background: #ffdb00;
+//  }
+//}
