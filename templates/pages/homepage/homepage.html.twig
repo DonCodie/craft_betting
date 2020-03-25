@@ -1,3 +1,8 @@
 {% extends 'base.html.twig' %}
 
-
+{% block rss %}
+    {% include 'utils/rss.html.twig' %}
+{% endblock %}
+{% block subscription %}
+    {% include 'block/subscription.html.twig' %}
+{% endblock %}
