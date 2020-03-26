@@ -14,28 +14,24 @@ button {
 
   &.btn-hover-diamond {
     &:hover {
-      border: 1px solid $diamond;
       background-color: rgba(112, 209, 244, 0.5);
     }
   }
 
   &.btn-hover-gold {
     &:hover {
-      border: 1px solid $gold;
       background-color: rgba(255, 215, 0, 0.5);
     }
   }
 
   &.btn-hover-green {
     &:hover {
-      border: 1px solid $green;
       background-color: rgba(90, 205, 130, 0.5);
     }
   }
 
   &.btn-hover-silver {
     &:hover {
-      border: 1px solid $silver;
       background-color: rgba(166, 172, 175, 0.5);
     }
   }

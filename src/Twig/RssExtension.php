@@ -91,7 +91,7 @@ class RssExtension extends AbstractExtension
             $rssbasket[$i]['link'] = $item->getLink();
             $rssbasket[$i]['image'] = $this->getRssBasketImg($item->getdescription());
             $rssbasket[$i]['title'] = $this->cutText($item->getTitle(), 30);
-            $rssbasket[$i]['description'] = $this->cutText($this->getRssBasketDescription($item->getdescription()));
+            $rssbasket[$i]['description'] = $this->cutText($this->getRssBasketDescription($item->getdescription()), 150);
             $i++;
 
             if ($i > 19) {
@@ -128,7 +128,7 @@ class RssExtension extends AbstractExtension
         $replace = strip_tags($replace);
         $replace = preg_replace('/&#39;/', '\'', $replace);
 
-        return $this->cutText($replace);
+        return $replace;
     }
 
     /**
@@ -143,7 +143,7 @@ class RssExtension extends AbstractExtension
             $rsstennis [$i]['link'] = $item->getLink();
             $rsstennis [$i]['image'] = $item->getMedias()[0]->getUrl();
             $rsstennis [$i]['title'] = $this->cutText($item->getTitle(), 30);
-            $rsstennis [$i]['description'] = $this->cutText($item->getdescription());
+            $rsstennis [$i]['description'] = $item->getdescription();
             $i++;
 
             if ($i > 19) {

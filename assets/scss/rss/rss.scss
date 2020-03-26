@@ -1,10 +1,9 @@
 .rss {
-
   &__container {
     width: 100%;
     height: 280px;
-    background-color: $black;
-    padding-top: 15px;
+    background: url("../../images/rss/rss-bc.png") no-repeat;
+    padding-top: 30px;
 
     &-maintitle {
       color: $white;
@@ -28,17 +27,14 @@
     width: 33%;
     height: 220px;
     box-sizing: border-box;
-    background-color: $black;
-    border: 1px solid $black;
 
     &-title {
       color: $white;
       text-align: center;
-      font-size: 18px;
+      font-size: 22px;
       letter-spacing: 1px;
       font-weight: bold;
       text-transform: uppercase;
-      text-decoration: underline;
       line-height: 40px;
     }
 
@@ -46,12 +42,13 @@
       width: 80%;
       margin: 0 auto;
       border: 1px solid $black;
-      height: 180px;
+      height: auto;
     }
 
     &-item {
       border: 1px solid $black;
       position: relative;
+      z-index: 0;
       width: 30%;
     }
 
@@ -61,7 +58,7 @@
     box-sizing: border-box;
     border: 1px solid $black;
     width: 30%;
-
+    position: relative;
 
     &-img {
 
@@ -70,6 +67,7 @@
     &-imgsize {
       width: 100%;
       height: 110px;
+      object-fit: cover;
     }
 
     &-title {
@@ -94,11 +92,10 @@
       color: $green;
       background-color: rgba($black, 0.9);
       padding: 10px 10px 0 10px;
-      text-align: justify;
+      text-align: left;
 
       &:hover {
         opacity: 1;
-        border-top: 2px solid $green;
       }
     }
   }
@@ -150,5 +147,5 @@
 }
 
 .slick-list {
-  border: 1px solid white;
+  border: 1px solid $white;
 }

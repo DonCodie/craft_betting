@@ -1,80 +1,80 @@
-{#{% block link %}#}
-{#    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>#}
-{#{% endblock %}#}
+{% block link %}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+{% endblock %}
 
-{#<div class="rss__container">#}
-{#    <p class="rss__container-maintitle">Les dernières news</p>#}
+<div class="rss__container">
+    <p class="rss__container-maintitle">Les dernières news</p>
 
-{#    <div class="rss__sports-container">#}
-{#        <div class="rss__sport">#}
-{#            <p class="rss__sport-title">Football</p>#}
-{#            <div class="rss__sport-slider">#}
-{#                {% for item in rss().rssfootball %}#}
-{#                    <div class="rss__item">#}
-{#                        <a href="{{ item.link }}" target="_blank">#}
-{#                            <div class="rss__item-img">#}
-{#                                <img class="rss__item-imgsize"#}
-{#                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-foot.png') }} {% endif %}"#}
-{#                                     alt="{{ item.title }}">#}
-{#                            </div>#}
-{#                            <div class="rss__item-title">#}
-{#                                <p class="rss__item-title-para">{{ item.title }}</p>#}
-{#                            </div>#}
-{#                            <div class="rss__item-description">#}
-{#                                <p>{{ item.description }}</p>#}
-{#                            </div>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="rss__sport">#}
-{#            <p class="rss__sport-title">Basket</p>#}
-{#            <div class="rss__sport-slider">#}
-{#                {% for item in rss().rssbasket %}#}
-{#                    <div class="rss__item">#}
-{#                        <a href="{{ item.link }}" target="_blank">#}
-{#                            <div class="rss__item-img">#}
-{#                                <img class="rss__item-imgsize"#}
-{#                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-nba.png') }} {% endif %}"#}
-{#                                     alt="{{ item.title }}">#}
-{#                            </div>#}
-{#                            <div class="rss__item-title">#}
-{#                                <p class="rss__item-title-para">{{ item.title }}</p>#}
-{#                            </div>#}
-{#                            <div class="rss__item-description">#}
-{#                                <p>{{ item.description }}</p>#}
-{#                            </div>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="rss__sport">#}
-{#            <p class="rss__sport-title">Tennis</p>#}
-{#            <div class="rss__sport-slider">#}
-{#                {% for item in rss().rsstennis %}#}
-{#                    <div class="rss__item">#}
-{#                        <a href="{{ item.link }}" target="_blank">#}
-{#                            <div class="rss__item-img">#}
-{#                                <img class="rss__item-imgsize"#}
-{#                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-tennis.png') }} {% endif %}"#}
-{#                                     alt="{{ item.title }}">#}
-{#                            </div>#}
-{#                            <div class="rss__item-title">#}
-{#                                <p class="rss__item-title-para">{{ item.title }}</p>#}
-{#                            </div>#}
-{#                            <div class="rss__item-description">#}
-{#                                <p>{{ item.description }}</p>#}
-{#                            </div>#}
-{#                        </a>#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
+    <div class="rss__sports-container">
+        <div class="rss__sport">
+            <p class="rss__sport-title">Football</p>
+            <div class="rss__sport-slider">
+                {% for item in rss().rssfootball %}
+                    <div class="rss__item">
+                        <a href="{{ item.link }}" target="_blank">
+                            <div class="rss__item-img">
+                                <img class="rss__item-imgsize"
+                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-foot.png') }} {% endif %}"
+                                     alt="{{ item.title }}">
+                            </div>
+                            <div class="rss__item-title">
+                                <p class="rss__item-title-para">{{ item.title }}</p>
+                            </div>
+                            <div class="rss__item-description">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="rss__sport">
+            <p class="rss__sport-title">Basket</p>
+            <div class="rss__sport-slider">
+                {% for item in rss().rssbasket %}
+                    <div class="rss__item">
+                        <a href="{{ item.link }}" target="_blank">
+                            <div class="rss__item-img">
+                                <img class="rss__item-imgsize"
+                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-nba.png') }} {% endif %}"
+                                     alt="{{ item.title }}">
+                            </div>
+                            <div class="rss__item-title">
+                                <p class="rss__item-title-para">{{ item.title }}</p>
+                            </div>
+                            <div class="rss__item-description">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="rss__sport">
+            <p class="rss__sport-title">Tennis</p>
+            <div class="rss__sport-slider">
+                {% for item in rss().rsstennis %}
+                    <div class="rss__item">
+                        <a href="{{ item.link }}" target="_blank">
+                            <div class="rss__item-img">
+                                <img class="rss__item-imgsize"
+                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-tennis.png') }} {% endif %}"
+                                     alt="{{ item.title }}">
+                            </div>
+                            <div class="rss__item-title">
+                                <p class="rss__item-title-para">{{ item.title }}</p>
+                            </div>
+                            <div class="rss__item-description">
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 
-{#{% block javascripts %}#}
-{#    {{ encore_entry_script_tags('rss') }}#}
-{#{% endblock %}#}
+{% block javascripts %}
+    {{ encore_entry_script_tags('rss') }}
+{% endblock %}

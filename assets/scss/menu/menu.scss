@@ -1,9 +1,73 @@
 .menu {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   color: $white;
-
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
   background-color: $black;
+
+  &__grid {
+    width: 60%;
+    margin: 0 auto;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    line-height: 50px;
+
+    &-item {
+      height: 50px;
+      color: $white;
+      border: 1px solid $white;
+      box-sizing: border-box;
+
+      &:hover {
+        color: $black;
+        background-color: $white;
+        border: 1px solid $white;
+        cursor: pointer;
+
+        .menu__grid-item-toggle {
+          display: block;
+        }
+      }
+
+      &-active {
+        color: $black;
+        background-color: $white;
+      }
+
+      &-toggle {
+        display: none;
+        height: auto;
+        color: $black;
+        background-color: $white;
+        z-index: 2;
+        margin-top: -1px;
+        margin-right: -2px;
+
+        &-sport {
+          border-bottom: 1px solid $black;
+
+          &-first {
+            border-top: 1px solid $black;
+          }
+
+          &:hover {
+            color: $white;
+            background-color: $black;
+          }
+
+          &-foot {
+            color: $black;
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
 }
