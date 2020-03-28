@@ -1,27 +1,36 @@
 <div class="menu">
     <div class="menu__grid">
-        <a href="{{ path('homepage') }}">
+        <a class="menu__grid-link" href="{{ path('homepage') }}">
             <div class="menu__grid-item {{ app.request.get('_route') == 'homepage' ? 'menu__grid-item-active' }}">
                 accueil
             </div>
         </a>
-        <div class="menu__grid-item">pronos
+        <div class="menu__grid-item {{ app.request.get('_route') == 'sports_football' ? 'menu__grid-item-active' }} ||
+                                    {{ app.request.get('_route') == 'sports_basket' ? 'menu__grid-item-active' }} ||
+                                    {{ app.request.get('_route') == 'sports_tennis' ? 'menu__grid-item-active' }}">
+            pronos
             <div class="menu__grid-item-toggle">
-                <div class="menu__grid-item-toggle-sport
+                <a class="menu__grid-link" href="{{ path('sports_football') }}">
+                    <div class="menu__grid-item-toggle-sport
                             menu__grid-item-toggle-sport-first">foot
-                </div>
-                <div class="menu__grid-item-toggle-sport">basket nba</div>
-                <div class="menu__grid-item-toggle-sport">tennis atp</div>
+                    </div>
+                </a>
+                <a class="menu__grid-link" href="{{ path('sports_basket') }}">
+                    <div class="menu__grid-item-toggle-sport">basket nba</div>
+                </a>
+                <a class="menu__grid-link" href="{{ path('sports_tennis') }}">
+                    <div class="menu__grid-item-toggle-sport">tennis atp</div>
+                </a>
             </div>
         </div>
         <a href="">
             <div class="menu__grid-item {{ app.request.get('_route') == '???' ? 'menu__grid-item-active' }}">
-                aterium
+                resultats / stats
             </div>
         </a>
         <a href="">
             <div class="menu__grid-item {{ app.request.get('_route') == '???' ? 'menu__grid-item-active' }}">
-                sonota
+                ?????
             </div>
         </a>
     </div>

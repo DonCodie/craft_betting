@@ -27,6 +27,26 @@ Encore
     .addEntry('footer', './assets/js/footer.js')
     .addEntry('rss', './assets/js/rss.js')
 
+    // add fonts directory
+    // .addLoader({
+    //     test: /\.(woff|woff2|eot|ttf|otf)$/,
+    //     use: [
+    //         {
+    //             loader: 'file-loader',
+    //             options: {
+    //                 outputPath: 'assets/fonts'
+    //             }
+    //         }
+    //     ]
+    // })
+    .configureFilenames({
+        fonts: 'fonts/[name].[ext]'
+    })
+
+    // .addPlugin(new CopyWebpackPlugin([
+    //     { from: './assets/fonts', to: 'fonts' }
+    // ]))
+
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 

@@ -42,28 +42,16 @@
 
   &__infos-highlight {
     text-align: center;
-    //font-size: 2em;
-    color: #fff;
+    font-family: 'poland', sans-serif;
+    color: $black;
 
   }
 
   &__infos-title {
+    font-size: 70px;
     letter-spacing: 10px;
-    font-family: 'Comfortaa', cursive;
     vertical-align: middle;
     line-height: 50px;
-
-    &-first {
-      font-size: 100px;
-      line-height: 100px;
-    }
-
-    &-rest {
-      font-size: 40px;
-      line-height: 105px;
-      vertical-align: bottom;
-      margin-left: -45px;
-    }
 
     //-webkit-transition: all 0.5s;
     //-moz-transition: all 0.5s;
@@ -75,8 +63,8 @@
   }
 
   &__infos-para {
+    font-size: 25px;
     line-height: 70px;
-    color: darkblue;
   }
 
 }

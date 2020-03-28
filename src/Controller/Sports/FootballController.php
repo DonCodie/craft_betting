@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class FootballController extends AbstractController
 {
     /**
-     * @Route("/football", name="sports_football")
+     * @Route("/pronos/football", name="sports_football")
      */
     public function index()
     {

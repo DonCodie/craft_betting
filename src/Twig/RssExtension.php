@@ -68,7 +68,7 @@ class RssExtension extends AbstractExtension
             $rssfootball [$i]['link'] = $item->getLink();
             $rssfootball [$i]['image'] = $item->getMedias()[0]->getUrl();
             $rssfootball [$i]['title'] = $this->cutText($item->getTitle(), 30);
-            $rssfootball [$i]['description'] = $this->cutText($item->getdescription());
+            $rssfootball [$i]['description'] = $this->cutText($item->getdescription(), 140);
             $i++;
 
             if ($i > 19) {

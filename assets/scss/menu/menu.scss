@@ -19,6 +19,10 @@
     text-align: center;
     line-height: 50px;
 
+    &-link {
+      cursor: pointer;
+    }
+
     &-item {
       height: 50px;
       color: $white;
@@ -29,7 +33,6 @@
         color: $black;
         background-color: $white;
         border: 1px solid $white;
-        cursor: pointer;
 
         .menu__grid-item-toggle {
           display: block;

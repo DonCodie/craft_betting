@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TennisController extends AbstractController
 {
     /**
-     * @Route("/tennis", name="sports_tennis")
+     * @Route("/pronos/tennis", name="sports_tennis")
      */
     public function index()
     {

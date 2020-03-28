@@ -41,12 +41,10 @@ class BreadcrumbExtension extends AbstractExtension
         $explodes = explode('/', parse_url($_SERVER['REQUEST_URI'])['path']);
         foreach ($explodes as $explode) {
             if (!empty($explode)) {
-                $breadcrumbs[$explode]['url'] = $explode;
-                $breadcrumbs[$explode]['separator'] = '/';
+                $breadcrumb[$explode]['url'] = $explode;
             }
         }
 
-        return $breadcrumbs;
+        return dump($breadcrumb);
     }
 }
-
