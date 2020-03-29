@@ -5,19 +5,20 @@
                 <div class="breadcrumb__text-logo"></div>
             </a>
         </span>
-{#        {% set urls = app.request.uri|split('/') %}#}
         {% for breadcrumb in breadcrumb() %}
-            {% if breadcrumb.url != 'accueil' %}
+            {% if breadcrumb.link != 'accueil' %}
                 <div>
                     <span class="breadcrumb__text-separator">/</span>
                     <span class="breadcrumb__text-path">
-                        <a href="{{ breadcrumb.url }}" class="breadcrumb__text-link">
-                            {{ breadcrumb.url }}
-                        </a>
+                        {% if not loop.last %}
+                            <a href="{{ app.request.getSchemeAndHttpHost() ~ '/' ~ breadcrumb.link }}"
+                               class="breadcrumb__text-link">
+                        {% endif %}
+                            {{ breadcrumb.text }}
+                            </a>
                     </span>
                 </div>
             {% endif %}
         {% endfor %}
     </div>
 </div>
-{#<p>Get path only: {{ app.request.uri }}</p>#}

@@ -39,12 +39,23 @@ class BreadcrumbExtension extends AbstractExtension
     public function breadcrumbUrl(): array
     {
         $explodes = explode('/', parse_url($_SERVER['REQUEST_URI'])['path']);
+        $i = 0;
+        $add = '';
+
         foreach ($explodes as $explode) {
             if (!empty($explode)) {
-                $breadcrumb[$explode]['url'] = $explode;
+                if (empty($add)) {
+                    $breadcrumb[$i]['link'] = $explode;
+                    $breadcrumb[$i]['text'] = $explode;
+                    $add = $explode;
+                } else {
+                    $breadcrumb[$i]['link'] = $add . '/' . $explode;
+                    $breadcrumb[$i]['text'] = $explode;
+                }
+                $i++;
             }
         }
 
-        return dump($breadcrumb);
+        return $breadcrumb;
     }
 }
