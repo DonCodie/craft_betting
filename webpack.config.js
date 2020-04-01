@@ -25,6 +25,8 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('footer', './assets/js/footer.js')
+    .addEntry('form', './assets/js/form.js')
+    .addEntry('header', './assets/js/header.js')
     .addEntry('rss', './assets/js/rss.js')
 
     // add fonts directory

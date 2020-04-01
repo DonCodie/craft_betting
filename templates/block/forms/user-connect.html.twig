@@ -1,0 +1,32 @@
+<form action="" method="post" class="form">
+    <div class="form__content">
+        <div class="form__choices">
+            <div class="form__choice">créer un compte</div>
+            <hr class="form__choice form__choice-hr">
+            <div class="form__choice form__choice-active">connexion</div>
+        </div>
+        <div class="form__item">
+            <label class="form__item-label" for="pseudo">pseudo</label>
+            <input class="form__item-input" type="text" name="pseudo" id="pseudo" required>
+        </div>
+        <div class="form__item">
+            <label class="form__item-label" for="password">mot de passe</label>
+            <input class="form__item-input" type="password" name="password" id="password" required>
+            <div class="form__item-password">
+                <img src="{{ asset('build/header/eye.png') }}" alt="eye">
+            </div>
+        </div>
+        <div class="form__item form__submit">
+            <input class="form__item-submit" type="submit" value="connexion">
+        </div>
+        <div class="form__forgot-password">
+            <a href="">
+                mot de passe oublié ?
+            </a>
+        </div>
+    </div>
+</form>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('form') }}
+{% endblock %}

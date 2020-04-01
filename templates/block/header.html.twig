@@ -1,15 +1,23 @@
 <header class="header">
     <div class="header__user">
         <div class="header__user-connexion">
-            mon compte
-        </div>
-        <div class="header__user-create">
-            créer un compte
+            <div class="header__user-popin">
+                {{ include('block/forms/user-connect.html.twig') }}
+            </div>
+            <div class="header__user-connexion-logo" id="logo">
+                <img src="{{ asset('build/header/user.png') }}" alt="???"
+                     class="header__user-connexion-logo-img">
+            </div>
+            <div class="header__user-connexion-infos">
+                228 parieurs connectés / inscrits
+            </div>
         </div>
     </div>
     <div class="header__banner">
-        <a href="{{ path('homepage') }}">
-            <div class="header__banner--img-div"></div>
-        </a>
+        <div class="header__banner--img-div"></div>
     </div>
 </header>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('header') }}
+{% endblock %}

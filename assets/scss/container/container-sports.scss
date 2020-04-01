@@ -14,14 +14,20 @@
     &-center {
       border: 1px solid $black;
       display: flex;
+      //display: grid;
+      //grid-template-columns: 20% auto;
 
       &-maintitle {
 
       }
 
+      &-pronos {
+        display: flex;
+      }
+
       &-prono {
-        width: 300px;
-        height: 450px;
+        width: 290px;
+        height: 470px;
         background-color: $blue;
         border: 1px solid $silver;
         border-radius: 12px;
