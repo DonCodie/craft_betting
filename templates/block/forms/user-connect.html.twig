@@ -1,4 +1,14 @@
-<form action="{{ path('users_connection') }}" method="post" class="form">
+{#{% if error %}#}
+{#    <div class="alert alert-danger">#}
+{#        <ul class="list-unstyled mb-0">#}
+{#            <li><span class="initialism form-error-icon badge badge-danger">Error</span>#}
+{#                <span class="form-error-message">{{ error.messageKey|trans(error.messageData, 'security') }}</span>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{#{% endif %}#}
+
+<form action="{{ path('login') }}" method="post" class="form">
     <div class="form__content">
         <div class="form__choices">
             <div class="form__choice">créer un compte</div>
@@ -7,15 +17,16 @@
         </div>
         <div class="form__item">
             <label class="form__item-label" for="pseudo">pseudo</label>
-            <input class="form__item-input" type="text" name="pseudo" id="pseudo" required>
+            <input class="form__item-input" type="text" name="form[_username]" id="pseudo" required>
         </div>
         <div class="form__item">
             <label class="form__item-label" for="password">mot de passe</label>
-            <input class="form__item-input" type="password" name="password" id="password" required>
+            <input class="form__item-input" type="password" name="form[_password]" id="password" required>
             <div class="form__item-password">
                 <img src="{{ asset('build/header/eye.png') }}" alt="eye">
             </div>
         </div>
+{#        <input type="hidden" name="token" value="{{ csrf_token('login') }}"/>#}
         <div class="form__item form__submit">
             <input class="form__item-submit" type="submit" value="connexion">
         </div>
