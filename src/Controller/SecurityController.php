@@ -38,8 +38,8 @@ class SecurityController extends AbstractController
 
             // message de succès
             $this->addFlash(
-                'notice',
-                'Your changes were saved!'
+                'success',
+                'Félicitations votre compte a bien été crée ! Connectez-vous dès à présent.'
             );
 
             // on redirige sur le form de connexion
@@ -56,6 +56,12 @@ class SecurityController extends AbstractController
      */
     public function login()
     {
+        // message de succès
+        $this->addFlash(
+            'success',
+            'Vous êtes bien connecté !'
+        );
+
         return $this->render('security/login.html.twig');
     }
 
