@@ -26,7 +26,7 @@ security:
 
             logout:
                 path:  /logout
-                target: homepage
+                target: /logout_message
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

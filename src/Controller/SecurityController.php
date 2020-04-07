@@ -66,6 +66,15 @@ class SecurityController extends AbstractController
     }
 
     /**
+     * @Route("/logout_message", name="security_logoutmessage")
+     */
+    public function logoutMessage()
+    {
+        $this->addFlash('warning', "Vous êtes bien déconnecté !");
+        return $this->redirectToRoute('homepage');
+    }
+
+    /**
      * @Route("/logout", name="security_logout")
      */
     public function logout()

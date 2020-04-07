@@ -28,10 +28,12 @@
             </div>
         </div>
     </div>
-    {% for message in app.flashes('success') %}
-        <div class="flash flash__success">
-            {{ message }}
-        </div>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash__{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
     {% endfor %}
     <div class="header__banner">
         <div class="header__banner--img-div"></div>
