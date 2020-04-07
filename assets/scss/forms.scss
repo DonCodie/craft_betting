@@ -4,6 +4,14 @@
   background-color: $green;
   border-radius: 5px;
 
+  &__login {
+    display: block;
+  }
+
+  &__register {
+    display: none;
+  }
+
   &__choices {
     padding-bottom: 10px;
   }
@@ -43,10 +51,10 @@
 
     &-label {
       position: absolute;
-      top: 6px;
+      top: 10px;
       margin-left: 10px;
       padding: 0 10px;
-      font-size: 18px;
+      font-size: 14px;
       color: $silver;
       transition: top .2s ease-in-out, font-size .2s ease-in-out, background-color .2s ease-in-out;
     }
@@ -54,8 +62,13 @@
     &-input {
       width: 85%;
       height: 30px;
-      font-size: 18px;
+      font-size: 13px;
       padding-left: 10px;
+
+      &:focus {
+        outline-color: $green;
+        background-color: $white;
+      }
     }
 
     &-submit {
@@ -78,6 +91,34 @@
   background-color: $white;
 }
 
-input[type=text]:focus {
-  outline: none;
+@-webkit-keyframes autofill {
+  0%,100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: unset;
+  margin-block-start: unset;
+  margin-block-end: unset;
+  margin-inline-start: unset;
+  margin-inline-end: unset;
+  padding-inline-start: unset;
+
+  & li {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    color: $red;
+    font-size: 12px;
+    font-weight: bold;
+  }
 }

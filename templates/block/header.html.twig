@@ -2,14 +2,29 @@
     <div class="header__user">
         <div class="header__user-connexion">
             <div class="header__user-popin">
-                {{ include('block/forms/user-connect.html.twig') }}
+{#                {% if not app.user %}#}
+                    {{ include('security/login.html.twig') }}
+{#                {% else %}#}
+{#                    {{ include('security/account.html.twig') }}#}
+{#                {% endif %}#}
             </div>
             <div class="header__user-connexion-logo" id="logo">
-                <img src="{{ asset('build/header/user.png') }}" alt="???"
-                     class="header__user-connexion-logo-img">
+                {% if app.user %}
+                    <img src="{{ asset('build/header/user-' ~ app.user.vipStatus ~ '.png') }}"
+                         alt="user"
+                         class="header__user-connexion-logo-img">
+                {% else %}
+                    <img src="{{ asset('build/header/user-default.png') }}"
+                         alt="user"
+                         class="header__user-connexion-logo-img">
+                {% endif %}
             </div>
             <div class="header__user-connexion-infos">
-                228 parieurs connectés / inscrits
+                {% if not app.user %}
+                    350 parieurs inscrits
+                {% else %}
+                    125 parieurs connectés
+                {% endif %}
             </div>
         </div>
     </div>

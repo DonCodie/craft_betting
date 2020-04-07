@@ -1,0 +1,66 @@
+{% extends 'pages/homepage/homepage.html.twig' %}
+
+{% block header %}
+
+    <header class="header">
+        <div class="header__user">
+            <div class="header__user-connexion">
+                <div class="header__user-popin">
+                    <form action="{{ path('security_login') }}" method="post" class="form form__login">
+                        <div class="form__content">
+                            <div class="form__choices">
+                                <a href="{{ path('security_register') }}">
+                                    <div class="form__choice form__choice-create">créer un compte</div>
+                                </a>
+                                <hr class="form__choice form__choice-hr">
+                                <div class="form__choice form__choice-connexion form__choice-active">connexion</div>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__item-label" for="email_login">email</label>
+                                <input class="form__item-input" type="email" name="_username" id="email_login" required>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__item-label" for="password_login">mot de passe</label>
+                                <input class="form__item-input" type="password" name="_password" id="password_login"
+                                       required>
+                                <div class="form__item-password">
+                                    <img src="{{ asset('build/header/eye.png') }}" alt="eye">
+                                </div>
+                            </div>
+                            <div class="form__item form__submit">
+                                <input class="form__item-submit" type="submit" value="connexion">
+                            </div>
+                            <div class="form__forgot-password">
+                                <a href="">
+                                    mot de passe oublié ?
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="header__user-connexion-logo" id="logo">
+                    <img src="{{ asset('build/header/user-default.png') }}"
+                         alt="user"
+                         class="header__user-connexion-logo-img">
+                </div>
+                <div class="header__user-connexion-infos">
+                    350 parieurs inscrits
+                </div>
+            </div>
+        </div>
+        <div class="header__banner">
+            <div class="header__banner--img-div"></div>
+        </div>
+    </header>
+
+    {#    {% for message in app.flashes('notice') %}#}
+    {#        <div class="flash-notice">#}
+    {#            {{ message }}#}
+    {#        </div>#}
+    {#    {% endfor %}#}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('form') }}
+{% endblock %}
