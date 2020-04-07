@@ -4,7 +4,7 @@
     <header class="header">
         <div class="header__user">
             <div class="header__user-connexion">
-                <div class="header__user-popin">
+                <div class="header__user-popin header__user-popin-show">
                     {{ form_start(form_register, {'attr': {'class': 'form'}}) }}
                     <div class="form__content">
                         <div class="form__choices">
@@ -12,7 +12,13 @@
                                 <div class="form__choice form__choice-connexion">connexion</div>
                             </a>
                             <hr class="form__choice form__choice-hr">
-                            <div class="form__choice form__choice-create form__choice-active">créer un compte</div>
+                            <a href="{{ path('security_login') }}">
+                                <div class="form__choice form__choice-create form__choice-active">créer un compte</div>
+                            </a>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item-label" for="registration_username">pseudo ...</label>
+                            {{ form_widget(form_register.username, {'attr': {'id': 'pseudo_register', 'class': 'form__item-input'}}) }}
                         </div>
                         <div class="form__item">
                             {% if not form_errors(form_register.email) %}

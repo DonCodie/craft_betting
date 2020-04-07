@@ -21,12 +21,12 @@
     font-size: 16px;
     line-height: 15px;
 
-    &-hr {
-      width: 25%;
+    &:hover {
+      color: $green;
     }
 
-    &-active {
-      color: $green;
+    &-hr {
+      width: 25%;
     }
   }
 

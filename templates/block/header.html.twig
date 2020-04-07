@@ -2,11 +2,11 @@
     <div class="header__user">
         <div class="header__user-connexion">
             <div class="header__user-popin">
-{#                {% if not app.user %}#}
-                    {{ include('security/login.html.twig') }}
-{#                {% else %}#}
-{#                    {{ include('security/account.html.twig') }}#}
-{#                {% endif %}#}
+                {% if not app.user %}
+                    {{ include('security/login_popin.html.twig') }}
+                {% else %}
+                    {{ include('security/account.html.twig') }}
+                {% endif %}
             </div>
             <div class="header__user-connexion-logo" id="logo">
                 {% if app.user %}
