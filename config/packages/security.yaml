@@ -25,8 +25,13 @@ security:
                 default_target_path: homepage
 
             logout:
-                path:  /logout
+                path: /logout
                 target: /logout_message
+
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 172800 # 2 days in seconds
+                path: /
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
