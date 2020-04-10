@@ -5,8 +5,11 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -17,7 +20,7 @@ class SecurityController extends AbstractController
      */
     public function registration(Request $request,
                                  EntityManagerInterface $manager,
-                                 UserPasswordEncoderInterface $encoder)
+                                 UserPasswordEncoderInterface $encoder, MailerInterface $mailer)
     {
         // création nouvel utilisateur
         $user = new User();
@@ -41,6 +44,16 @@ class SecurityController extends AbstractController
                 'success',
                 'Félicitations votre compte a bien été crée ! Connectez-vous dès à présent.'
             );
+
+            // on envoie un mail
+            $email = (new TemplatedEmail())
+                ->from(new Address('9d4c5346d59fdb@smtp.mailtrap.io', '9d4c5346d59fdb'))
+                ->to($user->getEmail())
+                ->subject('Your password reset request')
+                ->htmlTemplate('emailtest.html.twig')
+            ;
+
+            $mailer->send($email);
 
             // on redirige sur le form de connexion
             return $this->redirectToRoute('homepage');
