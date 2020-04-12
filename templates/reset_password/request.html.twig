@@ -1,22 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reset your password{% endblock %}
+{% block title %}Nouveau mot de passe{% endblock %}
 
-{% block body %}
+{% block container %}
     {% for flashError in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        <div class="flash__error" role="alert">{{ flashError }}</div>
     {% endfor %}
-    <h1>Reset your password</h1>
 
-    {{ form_start(requestForm) }}
-        {{ form_row(requestForm.email) }}
-        <div>
-            <small>
-                Enter your email address and we we will send you a
-                link to reset your password.
-            </small>
+    <div class="form__email">
+        <h1 class="form__email-title">Mise à jour de votre mot de passe</h1>
+
+        {{ form_start(requestForm, {'attr': {'class': 'form form__email-container'}}) }}
+        <div class="form__content">
+            <div class="form__item form__email__item-email">
+                <label class="form__item-label" for="reset_password_request_form_email">email ...</label>
+                {{ form_widget(requestForm.email, {'attr': {'id': 'reset_password_request_form_email', 'class': 'form__item-input'}}) }}
+            </div>
+            <div class="form__email__item-comment">
+                    Taper votre adresse email et nous vous enverrons un
+                    lien pour mettre à jour votre mot de passe
+            </div>
+            <div class="form__item form__submit">
+                <input class="form__item-submit" type="submit" value="envoyer">
+            </div>
         </div>
-
-        <button class="btn btn-primary">Send password reset email</button>
-    {{ form_end(requestForm) }}
+        {{ form_end(requestForm) }}
+    </div>
 {% endblock %}
