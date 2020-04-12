@@ -49,8 +49,11 @@ class SecurityController extends AbstractController
             $email = (new TemplatedEmail())
                 ->from(new Address('9d4c5346d59fdb@smtp.mailtrap.io', '9d4c5346d59fdb'))
                 ->to($user->getEmail())
-                ->subject('Your password reset request')
-                ->htmlTemplate('emailtest.html.twig')
+                ->subject('Bienvenu chez Craft Betting')
+                ->htmlTemplate('email/email-register.html.twig')
+                ->context([
+                    'username' => $user->getUsername()
+                ])
             ;
 
             $mailer->send($email);

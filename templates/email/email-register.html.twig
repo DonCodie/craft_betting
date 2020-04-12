@@ -1,0 +1,65 @@
+<style>
+    .email {
+        width: 100%;
+        height: auto;
+    }
+
+    .email__logo {
+        height: auto;
+        text-align: center;
+    }
+
+    .email__container {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .email__title {
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        background-color: #5ACD82;
+    }
+
+    .email__content {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .email__para {
+        text-align: justify;
+        font-size: 20px;
+    }
+
+    .email__strong {
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="email">
+    <div class="email__logo">
+        <img src="{{ absolute_url(asset('build/header/header-email.png')) }}"
+             alt="logo"
+             class="">
+    </div>
+    <div class="email__container">
+        <div class="email__title">
+            <h1>bienvenu chez craft betting</h1>
+        </div>
+        <div class="email__content">
+            <p class="email__para">
+                Heureux de vous avoir parmi nous <strong class="email__strong">{{ username }}</strong> !<br/>
+                Votre inscription a bien été validée, vous faîtes désormais parti de la
+                grande famille craft betting, félicitations. <br/>
+            </p>
+            <p class="email__para">
+                Ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet,
+                autem consectetur distinctio dolorem, dolorum laboriosam laborum nihil
+                odio quae qui quis quisquam quod quos temporibus veniam voluptatum?
+                Quis, sit!
+            </p>
+        </div>
+    </div>
+</div>
