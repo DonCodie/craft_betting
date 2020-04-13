@@ -20,7 +20,7 @@ class FootballController extends AbstractController
 
         return $this->render('pages/sports/football.html.twig',
             [
-                'pronos' => dump($pronos)
+                'pronos' => $pronos
             ]);
     }
 

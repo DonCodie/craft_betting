@@ -1,33 +1,95 @@
 .container {
   width: 100%;
   height: auto;
-  padding: 20px 0 100px 0;
+  padding-bottom: 100px;
   background-color: $green;
 
   &__sports {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    display: flex;
+    width: 100%;
     height: auto;
     margin: 0 auto;
-    background-color: $white;
+
+    &-left {
+      width: 20%;
+      height: 900px;
+      box-sizing: border-box;
+
+      &-foot {
+        background: $green url("../../images/container/foot/foot-left.png") no-repeat;
+        background-position: center;
+      }
+
+      &-basket {
+        background: $green url("../../images/container/basket/basket-left.png") no-repeat;
+        background-position: center;
+      }
+
+      &-tennis {
+        background: $green url("../../images/container/tennis/tennis-left.png") no-repeat;
+        background-position: center;
+      }
+    }
 
     &-center {
-      border: 1px solid $black;
       display: flex;
-      //display: grid;
-      //grid-template-columns: 20% auto;
+      width: 60%;
+      box-sizing: border-box;
+      border: 1px solid $black;
+      background-color: $white;
 
       &-maintitle {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        letter-spacing: 1px;
+      }
 
+      &-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        width: 25%;
+        margin: 0 auto;
+        padding-bottom: 15px;
+      }
+
+      &-filter {
+        padding: 5px 10px;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 15px;
+        color: $black;
+        font-weight: bold;
+        background-color: rgba($green, 0.2);
+
+        border: 1px solid $black;
+
+        &:hover {
+          background-color: rgba($green, 0.8);
+          cursor: pointer;
+        }
+
+        &-active {
+          background-color: rgba($green, 0.8);
+        }
+      }
+
+      &-content {
+        width: 80%;
+        padding: 0 10px;
       }
 
       &-pronos {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        column-gap: 10px;
+        row-gap: 20px;
       }
 
       &-prono {
-        width: 290px;
-        height: 470px;
+        height: 475px;
         background-color: $blue;
         border: 1px solid $silver;
         border-radius: 12px;
@@ -40,9 +102,11 @@
         &-date {
           font-size: 18px;
           padding-top: 15px;
+          text-transform: capitalize;
         }
 
         &-league {
+          height: 40px;
           font-size: 25px;
           font-weight: bold;
           text-transform: capitalize;
@@ -54,10 +118,6 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           padding-top: 20px;
-        }
-
-        &-logo {
-
         }
 
         &-teams {
@@ -85,7 +145,7 @@
         }
 
         &-subtext {
-          font-size: 24px;
+          font-size: 22px;
           padding: 0 15px;
           font-weight: bold;
           min-height: 70px;
@@ -139,7 +199,7 @@
           grid-template-columns: 2fr 1fr 3fr;
           align-items: center;
           line-height: 35px;
-          border: 1px solid $black;
+          border: 2px solid $black;
           border-radius: 10px;
 
           &-left {
@@ -180,34 +240,26 @@
       }
     }
 
-    &-left-foot {
-      background: $green url("../../images/container/foot/foot-left.png") no-repeat;
-      background-position: center;
-    }
+    &-right {
+      width: 20%;
+      height: 900px;
+      box-sizing: border-box;
+      background-color: $green;
 
-    &-right-foot {
-      background: $green url("../../images/container/foot/foot-right.png") no-repeat;
-      background-position: center;
-    }
+      &-foot {
+        background: $green url("../../images/container/foot/foot-right.png") no-repeat;
+        background-position: center;
+      }
 
-    &-left-basket {
-      background: $green url("../../images/container/basket/basket-left.png") no-repeat;
-      background-position: center;
-    }
+      &-basket {
+        background: $green url("../../images/container/basket/basket-right.png") no-repeat;
+        background-position: center;
+      }
 
-    &-right-basket {
-      background: $green url("../../images/container/basket/basket-right.png") no-repeat;
-      background-position: center;
-    }
-
-    &-left-tennis {
-      background: $green url("../../images/container/tennis/tennis-left.png") no-repeat;
-      background-position: center;
-    }
-
-    &-right-tennis {
-      background: $green url("../../images/container/tennis/tennis-right.png") no-repeat;
-      background-position: center;
+      &-tennis {
+        background: $green url("../../images/container/tennis/tennis-right.png") no-repeat;
+        background-position: center;
+      }
     }
   }
 
