@@ -16,6 +16,6 @@ class customFilters extends AbstractExtension
 
     public function pronoImg($input)
     {
-        return preg_replace('/\s \'/', '-', $input);
+        return preg_replace('/\s/', '-', $input);
     }
 }

@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\WebsiteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ResultRepository")
  */
-class Website
+class Result
 {
     /**
      * @ORM\Id()
@@ -21,10 +21,10 @@ class Website
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $resultat;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Prono", mappedBy="website")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prono", mappedBy="result")
      */
     private $pronos;
 
@@ -38,16 +38,21 @@ class Website
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getResultat(): ?string
     {
-        return $this->name;
+        return $this->resultat;
     }
 
-    public function setName(string $name): self
+    public function setResultat(string $resultat): self
     {
-        $this->name = $name;
+        $this->resultat = $resultat;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return$this->resultat;
     }
 
     /**
@@ -62,7 +67,7 @@ class Website
     {
         if (!$this->pronos->contains($prono)) {
             $this->pronos[] = $prono;
-            $prono->setWebsite($this);
+            $prono->setResult($this);
         }
 
         return $this;
@@ -73,16 +78,11 @@ class Website
         if ($this->pronos->contains($prono)) {
             $this->pronos->removeElement($prono);
             // set the owning side to null (unless already changed)
-            if ($prono->getWebsite() === $this) {
-                $prono->setWebsite(null);
+            if ($prono->getResult() === $this) {
+                $prono->setResult(null);
             }
         }
 
         return $this;
-    }
-
-    public function __toString()
-    {
-        return$this->name;
     }
 }

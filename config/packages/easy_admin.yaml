@@ -8,10 +8,11 @@ easy_admin:
 
     entities:
 #        # List the entity class name you want to manage
-#        - App\Entity\Prono
-        - App\Entity\Sport
-        - App\Entity\CountryAndLeague
-        - App\Entity\Team
+#        - App\Entity\CountryAndLeague
+        - App\Entity\Prono
+#        - App\Entity\Result
+#        - App\Entity\Sport
+#        - App\Entity\Team
+        - App\Entity\User
         - App\Entity\Website
         - App\Entity\WebsiteUrl
-        - App\Entity\User
