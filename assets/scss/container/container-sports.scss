@@ -155,12 +155,41 @@
         }
 
         &-subtext {
+          position: static;
           font-size: 22px;
           padding: 0 15px;
           font-weight: bold;
           min-height: 80px;
           color: $green;
           padding-bottom: 10px;
+        }
+
+        &-triangle {
+          display: inline-block;
+          border-top: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          border-left: 20px solid $red;
+          vertical-align: middle;
+          margin-left: 10px;
+
+          &:hover {
+            cursor: pointer;
+            border-top: 20px solid $green;
+            border-right: 12px solid transparent;
+            border-left: 12px solid transparent;
+            vertical-align: -webkit-baseline-middle;
+            margin-left: 10px;
+          }
+        }
+
+        &-analysis {
+          display: none;
+          width: 100%;
+          height: auto;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+          background-color: $blue;
+          box-shadow: 2px 3px 10px 3px $silver;
         }
 
         &-loto {
@@ -221,8 +250,8 @@
               display: table-cell;
               vertical-align: middle;
               text-align: center;
-              border-top-left-radius: 9px;
-              border-bottom-left-radius: 9px;
+              border-top-left-radius: 7px;
+              border-bottom-left-radius: 7px;
             }
           }
 

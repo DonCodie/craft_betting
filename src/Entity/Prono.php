@@ -64,6 +64,11 @@ class Prono
      */
     private $odd;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $analysis;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -163,5 +168,15 @@ class Prono
         $this->odd = $odd;
 
         return $this;
+    }
+
+    public function getAnalysis(): ?string
+    {
+        return $this->analysis;
+    }
+
+    public function setAnalysis(string $analysis): self
+    {
+        $this->analysis = $analysis;
     }
 }
