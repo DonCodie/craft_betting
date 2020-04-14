@@ -2,7 +2,6 @@
 
 {% block title %}Pronostics Football{% endblock %}
 {% block container %}
-
     <div class="container">
         {% include 'utils/breadcrumb.html.twig' %}
         <div class="container__sports">
@@ -19,8 +18,14 @@
                         <div class="container__sports-center-filter">demain</div>
                     </div>
                     <div class="container__sports-center-pronos">
-                        {% for prono in pronos %}
-                            <div class="container__sports-center-prono">
+                        {% for prono in allPronos %}
+                            {# Set date vars #}
+                            {% set dateFilter = prono.datetime|date("d/m/Y") %}
+                            {% set dateCurrent = "now"|date("d/m/Y") %}
+                            {% set dateCurrentMoreOneDay = "now"|date_modify("+1 day")|date("d/m/Y") %}
+
+                            <div class="container__sports-center-prono
+                                        container__sports-center-prono-all">
                                 <div class="container__sports-center-prono-date">
                                     {{ prono.datetime|format_datetime('full', 'short', locale='fr') }}
                                 </div>
@@ -76,7 +81,8 @@
                                 </div>
                                 <div class="container__sports-center-prono-bet">
                                     <div class="container__sports-center-prono-bet-left">
-                                        <img src="{{ asset('build/affiliate/' ~ prono.website ~ '.png') }}" alt="???"
+                                        <img src="{{ asset('build/affiliate/' ~ prono.website ~ '.png') }}"
+                                             alt="???"
                                              class="container__sports-center-prono-bet-left-img">
                                     </div>
                                     <div class="container__sports-center-prono-bet-center">
@@ -89,6 +95,155 @@
                                     </a>
                                 </div>
                             </div>
+
+                            {% if dateFilter == dateCurrent %}
+                                <div class="container__sports-center-prono
+                                            container__sports-center-prono-today">
+                                    <div class="container__sports-center-prono-date">
+                                        {{ prono.datetime|format_datetime('full', 'short', locale='fr') }}
+                                    </div>
+                                    <div class="container__sports-center-prono-league">
+                                        {{ prono.countryAndLeague }}
+                                    </div>
+                                    <div class="container__sports-center-prono-logos">
+                                        <div class="container__sports-center-prono-logo">
+                                            <img src="{{ asset('build/container/foot/logos/ligue1/' ~ prono.homeTeam | prono_img ~ '.png') }}"
+                                                 alt="logo {{ prono.homeTeam }}">
+                                        </div>
+                                        <div class="container__sports-center-prono-logo">
+                                            <img src="{{ asset('build/container/foot/logos/ligue1/' ~ prono.visitorTeam | prono_img ~ '.png') }}"
+                                                 alt="logo {{ prono.visitorTeam }}">
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-teams">
+                                        <div class="container__sports-center-prono-team">
+                                            {{ prono.homeTeam }}
+                                        </div>
+                                        <div class="container__sports-center-prono-team">
+                                            {{ prono.visitorTeam }}
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-text">
+                                        notre prono :
+                                    </div>
+                                    <div class="container__sports-center-prono-subtext">
+                                        <span class="capitalize">{{ prono.homeTeam }}</span> {{ prono.result|trim }}
+                                    </div>
+                                    <div class="container__sports-center-prono-loto">
+                                        <div class="container__sports-center-prono-loto-result
+                                {% if (prono.result|trim is same as ("gagne le match")) or
+                                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            1
+                                        </div>
+                                        <div class="container__sports-center-prono-loto-result
+                                {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or
+                                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            N
+                                        </div>
+                                        <div class="container__sports-center-prono-loto-result-last
+                                {% if (prono.result|trim is same as ("perd le match")) or
+                                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            2
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-bet">
+                                        <div class="container__sports-center-prono-bet-left">
+                                            <img src="{{ asset('build/affiliate/' ~ prono.website ~ '.png') }}"
+                                                 alt="???"
+                                                 class="container__sports-center-prono-bet-left-img">
+                                        </div>
+                                        <div class="container__sports-center-prono-bet-center">
+                                            {{ prono.odd }}
+                                        </div>
+                                        <a href="https://{{ prono.websiteUrl }}/" target="_blank">
+                                            <div class="container__sports-center-prono-bet-right">
+                                                pariez maintenant
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if dateFilter == dateCurrentMoreOneDay %}
+                                <div class="container__sports-center-prono
+                                            container__sports-center-prono-tomorrow">
+                                    <div class="container__sports-center-prono-date">
+                                        {{ prono.datetime|format_datetime('full', 'short', locale='fr') }}
+                                    </div>
+                                    <div class="container__sports-center-prono-league">
+                                        {{ prono.countryAndLeague }}
+                                    </div>
+                                    <div class="container__sports-center-prono-logos">
+                                        <div class="container__sports-center-prono-logo">
+                                            <img src="{{ asset('build/container/foot/logos/ligue1/' ~ prono.homeTeam | prono_img ~ '.png') }}"
+                                                 alt="logo {{ prono.homeTeam }}">
+                                        </div>
+                                        <div class="container__sports-center-prono-logo">
+                                            <img src="{{ asset('build/container/foot/logos/ligue1/' ~ prono.visitorTeam | prono_img ~ '.png') }}"
+                                                 alt="logo {{ prono.visitorTeam }}">
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-teams">
+                                        <div class="container__sports-center-prono-team">
+                                            {{ prono.homeTeam }}
+                                        </div>
+                                        <div class="container__sports-center-prono-team">
+                                            {{ prono.visitorTeam }}
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-text">
+                                        notre prono :
+                                    </div>
+                                    <div class="container__sports-center-prono-subtext">
+                                        <span class="capitalize">{{ prono.homeTeam }}</span> {{ prono.result|trim }}
+                                    </div>
+                                    <div class="container__sports-center-prono-loto">
+                                        <div class="container__sports-center-prono-loto-result
+                                {% if (prono.result|trim is same as ("gagne le match")) or
+                                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            1
+                                        </div>
+                                        <div class="container__sports-center-prono-loto-result
+                                {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or
+                                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            N
+                                        </div>
+                                        <div class="container__sports-center-prono-loto-result-last
+                                {% if (prono.result|trim is same as ("perd le match")) or
+                                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}
+                                    container__sports-center-prono-loto-result-crossed
+                                {% endif %}">
+                                            2
+                                        </div>
+                                    </div>
+                                    <div class="container__sports-center-prono-bet">
+                                        <div class="container__sports-center-prono-bet-left">
+                                            <img src="{{ asset('build/affiliate/' ~ prono.website ~ '.png') }}"
+                                                 alt="???"
+                                                 class="container__sports-center-prono-bet-left-img">
+                                        </div>
+                                        <div class="container__sports-center-prono-bet-center">
+                                            {{ prono.odd }}
+                                        </div>
+                                        <a href="https://{{ prono.websiteUrl }}/" target="_blank">
+                                            <div class="container__sports-center-prono-bet-right">
+                                                pariez maintenant
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+
                         {% endfor %}
                     </div>
                 </div>
@@ -96,5 +251,8 @@
             <div class="container__sports-right container__sports-right-foot"></div>
         </div>
     </div>
+{% endblock %}
 
+{% block javascripts %}
+    {{ encore_entry_script_tags('pronos') }}
 {% endblock %}

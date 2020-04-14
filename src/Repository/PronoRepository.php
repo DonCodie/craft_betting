@@ -19,32 +19,18 @@ class PronoRepository extends ServiceEntityRepository
         parent::__construct($registry, Prono::class);
     }
 
-    // /**
-    //  * @return Prono[] Returns an array of Prono objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    public function findAllToComeUp()
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('p.datetime >= :datetime')
+            ->setParameter('datetime', new \DateTime())
+            ->orderBy('p.datetime', 'ASC')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Prono
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

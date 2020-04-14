@@ -11,16 +11,17 @@ class FootballController extends AbstractController
 {
     /**
      * @Route("/pronos/football", name="sports_football")
+     * @throws \Exception
      */
     public function index()
     {
-        $pronos = $this->getDoctrine()
+        $allPronos = $this->getDoctrine()
             ->getRepository(Prono::class)
-            ->findAll();
+            ->findAllToComeUp();
 
         return $this->render('pages/sports/football.html.twig',
             [
-                'pronos' => $pronos
+                'allPronos' => $allPronos
             ]);
     }
 

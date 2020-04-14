@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Regex as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PronoRepository")
@@ -59,6 +60,7 @@ class Prono
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert (pattern="/^[0-9]+\.[0-9]+$/")
      */
     private $odd;
 
