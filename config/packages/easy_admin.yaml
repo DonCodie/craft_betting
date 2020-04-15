@@ -5,17 +5,73 @@ easy_admin:
     design:
         assets:
             favicon: '/build/favicon/favicon.png'
+        menu:
+            - label: 'gérer les pronostics'
+            - { entity: 'Prono', icon: 'newspaper', label: 'Pronostics' }
+
+            - label: 'gérer les sites partenaires'
+            - label: 'Sites Web et Adresses'
+              icon: 'folder'
+              children:
+                - { entity: 'Website', icon: 'paperclip', label: 'Sites Web' }
+                - { entity: 'WebsiteUrl', icon: 'link', label: 'Adresses des Sites Web' }
+#
+            - label: 'gérer les utilisateurs'
+            - { entity: 'User', icon: 'user', label: 'Utilisateurs' }
 
     formats:
         datetime: 'd/m/Y h:i'
 
     entities:
-#        # List the entity class name you want to manage
+        Prono:
+            class: App\Entity\Prono
+            label: 'Pronostics'
+            list:
+                title: 'Liste des pronostics'
+            form:
+                fields:
+                    - { property: 'datetime', label: 'Date et Heure'}
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'countryAndLeague', label: 'Championnat' }
+                    - { property: 'homeTeam', label: 'Équipe à domicile' }
+                    - { property: 'visitorTeam', label: 'Équipe à l''exterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site' }
+                    - { property: 'websiteUrl', label: 'Adresse du site' }
+#                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+
+        User:
+            class: App\Entity\User
+            label: 'Utilisateurs'
+            list:
+                title: 'Liste des utilisateurs'
+            form:
+                fields:
+                    - { property: 'email', label: 'email', type: 'email'}
+                    - { property: 'username', label: 'Nom' }
+                    - { property: 'password', type: 'text', label: 'Mot de passe' }
+                    - { property: 'vipStatus', type: 'text', label: 'Statut VIP' }
+
+        Website:
+            class: App\Entity\Website
+            label: 'Sites Web Partenaires'
+            list:
+                title: 'Liste des sites peb partenaires'
+            form:
+                fields:
+                    - { property: 'name', label: 'nom du site'}
+
+        WebsiteUrl:
+            class: App\Entity\WebsiteUrl
+            label: 'Sites Web Partenaires'
+            list:
+                title: 'Adresses des sites web partenaires'
+            form:
+                fields:
+                    - { property: 'url', label: 'adresse du site'}
+
 #        - App\Entity\CountryAndLeague
-        - App\Entity\Prono
 #        - App\Entity\Result
 #        - App\Entity\Sport
 #        - App\Entity\Team
-        - App\Entity\User
-        - App\Entity\Website
-        - App\Entity\WebsiteUrl

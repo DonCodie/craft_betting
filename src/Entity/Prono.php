@@ -65,9 +65,15 @@ class Prono
     private $odd;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $analysis;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Sport", inversedBy="pronos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $sport;
 
     public function getId(): ?int
     {
@@ -178,5 +184,17 @@ class Prono
     public function setAnalysis(string $analysis): self
     {
         $this->analysis = $analysis;
+    }
+
+    public function getSport(): ?Sport
+    {
+        return $this->sport;
+    }
+
+    public function setSport(?Sport $sport): self
+    {
+        $this->sport = $sport;
+
+        return $this;
     }
 }

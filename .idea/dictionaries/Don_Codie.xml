@@ -1,9 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Don Codie">
     <words>
+      <w>adresses</w>
       <w>affichage</w>
       <w>ajoute</w>
       <w>boutons</w>
+      <w>championnat</w>
       <w>changement</w>
       <w>cherche</w>
       <w>classe</w>
@@ -21,11 +23,15 @@
       <w>filtres</w>
       <w>fonction</w>
       <w>formulaire</w>
+      <w>gérer</w>
+      <w>heure</w>
+      <w>liste</w>
       <w>nouvel</w>
       <w>ouverture</w>
       <w>persiste</w>
       <w>prono</w>
       <w>pronos</w>
+      <w>pronostics</w>
       <w>rajoute</w>
       <w>redirige</w>
       <w>rssbasket</w>
@@ -37,6 +43,8 @@
       <w>sucés</w>
       <w>supprime</w>
       <w>utilisateur</w>
+      <w>utilisateurs</w>
+      <w>équipe</w>
     </words>
   </dictionary>
 </component>
