@@ -10,11 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class FootballController extends AbstractController
+class BasketballController extends AbstractController
 {
-    const FOOTBALL = 1;
+    const BASKETBALL = 2;
     /**
-     * @Route("/pronos/football", name="sports_football")
+     * @Route("/pronos/basketball", name="sports_basketball")
      * @throws \Exception
      */
     public function index(PaginatorInterface $paginator, Request $request)
@@ -22,19 +22,19 @@ class FootballController extends AbstractController
         $pronos = $paginator->paginate(
             $this->getDoctrine()
                 ->getRepository(Prono::class)
-                ->findAllPronosToComeUpQuery(self::FOOTBALL),
+                ->findAllPronosToComeUpQuery(self::BASKETBALL),
             $request->query->getInt('page', 1),
             6
         );
 
-        return $this->render('pages/sports/football.html.twig',
+        return $this->render('pages/sports/basketball.html.twig',
             [
                 'pronos' => $pronos
             ]);
     }
 
     /**
-     * @Route("/pronos/football/today", name="sports_football_today")
+     * @Route("/pronos/basketball/today", name="sports_basketball_today")
      * @throws \Exception
      */
     public function today(PaginatorInterface $paginator, Request $request)
@@ -42,19 +42,19 @@ class FootballController extends AbstractController
         $pronos = $paginator->paginate(
             $this->getDoctrine()
                 ->getRepository(Prono::class)
-                ->findTodayPronosToComeUpQuery(self::FOOTBALL),
+                ->findTodayPronosToComeUpQuery(self::BASKETBALL),
             $request->query->getInt('page', 1),
             6
         );
 
-        return $this->render('pages/sports/football.html.twig',
+        return $this->render('pages/sports/basketball.html.twig',
             [
                 'pronos' => $pronos
             ]);
     }
 
     /**
-     * @Route("/pronos/football/tomorrow", name="sports_football_tomorrow")
+     * @Route("/pronos/basketball/tomorrow", name="sports_basketball_tomorrow")
      * @throws \Exception
      */
     public function tomorrow(PaginatorInterface $paginator, Request $request)
@@ -62,12 +62,12 @@ class FootballController extends AbstractController
         $pronos = $paginator->paginate(
             $this->getDoctrine()
                 ->getRepository(Prono::class)
-                ->findTomorrowPronosToComeUpQuery(self::FOOTBALL),
+                ->findTomorrowPronosToComeUpQuery(self::BASKETBALL),
             $request->query->getInt('page', 1),
             6
         );
 
-        return $this->render('pages/sports/football.html.twig',
+        return $this->render('pages/sports/basketball.html.twig',
             [
                 'pronos' => $pronos
             ]);

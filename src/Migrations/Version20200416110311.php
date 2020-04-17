@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200414132946 extends AbstractMigration
+final class Version20200416110311 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,7 @@ final class Version20200414132946 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE prono ADD datetime DATETIME NOT NULL, DROP date, DROP time');
+        $this->addSql('ALTER TABLE prono DROP datetime');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20200414132946 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE prono ADD date DATE NOT NULL, ADD time TIME NOT NULL, DROP datetime');
+        $this->addSql('ALTER TABLE prono ADD datetime DATETIME NOT NULL');
     }
 }

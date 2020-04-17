@@ -1,0 +1,44 @@
+.pagination {
+  width: 100%;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  color: $black;
+
+  &__first {
+    padding-right: 10px;
+  }
+
+  &__previous {
+
+  }
+
+  &__page {
+
+  }
+
+  &__current {
+    color: $green;
+  }
+
+  &__next {
+
+  }
+
+  &__last {
+    padding-left: 10px;
+  }
+
+  &__padding {
+    padding: 0 5px;
+  }
+
+  span {
+    &:hover {
+      color: $green;
+    }
+  }
+}

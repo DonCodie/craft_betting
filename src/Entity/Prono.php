@@ -18,9 +18,14 @@ class Prono
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
-    private $datetime;
+    private $date;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    private $time;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\CountryAndLeague", inversedBy="pronos")
@@ -80,14 +85,38 @@ class Prono
         return $this->id;
     }
 
-    public function getDatetime(): ?\DateTimeInterface
+    public function getSport(): ?Sport
     {
-        return $this->datetime;
+        return $this->sport;
     }
 
-    public function setDatetime(\DateTimeInterface $datetime): self
+    public function setSport(?Sport $sport): self
     {
-        $this->datetime = $datetime;
+        $this->sport = $sport;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getTime(): ?\DateTimeInterface
+    {
+        return $this->time;
+    }
+
+    public function setTime(\DateTimeInterface $time): self
+    {
+        $this->time = $time;
 
         return $this;
     }
@@ -140,6 +169,18 @@ class Prono
         return $this;
     }
 
+    public function getOdd(): ?string
+    {
+        return $this->odd;
+    }
+
+    public function setOdd(string $odd): self
+    {
+        $this->odd = $odd;
+
+        return $this;
+    }
+
     public function getWebsite(): ?Website
     {
         return $this->website;
@@ -164,18 +205,6 @@ class Prono
         return $this;
     }
 
-    public function getOdd(): ?string
-    {
-        return $this->odd;
-    }
-
-    public function setOdd(string $odd): self
-    {
-        $this->odd = $odd;
-
-        return $this;
-    }
-
     public function getAnalysis(): ?string
     {
         return $this->analysis;
@@ -186,15 +215,4 @@ class Prono
         $this->analysis = $analysis;
     }
 
-    public function getSport(): ?Sport
-    {
-        return $this->sport;
-    }
-
-    public function setSport(?Sport $sport): self
-    {
-        $this->sport = $sport;
-
-        return $this;
-    }
 }

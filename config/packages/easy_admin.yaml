@@ -20,7 +20,8 @@ easy_admin:
             - { entity: 'User', icon: 'user', label: 'Utilisateurs' }
 
     formats:
-        datetime: 'd/m/Y h:i'
+        date: 'd/m/Y'
+        time: 'h:i'
 
     entities:
         Prono:
@@ -28,9 +29,22 @@ easy_admin:
             label: 'Pronostics'
             list:
                 title: 'Liste des pronostics'
+                fields:
+                    - { property: 'id', label: 'ID' }
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'date', label: 'Date' }
+                    - { property: 'time', label: 'Horaire', format: 'H:i' }
+                    - { property: 'countryAndLeague', label: 'Pays et Ligue' }
+                    - { property: 'homeTeam', label: 'Domicile' }
+                    - { property: 'visitorTeam', label: 'Éxterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site Web' }
+                    - { property: 'websiteUrl', label: 'Adresse Site Web' }
             form:
                 fields:
-                    - { property: 'datetime', label: 'Date et Heure'}
+                    - { property: 'date', label: 'Date'}
+                    - { property: 'time', label: 'Heure'}
                     - { property: 'sport', label: 'Sport' }
                     - { property: 'countryAndLeague', label: 'Championnat' }
                     - { property: 'homeTeam', label: 'Équipe à domicile' }
@@ -39,7 +53,7 @@ easy_admin:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'website', label: 'Site' }
                     - { property: 'websiteUrl', label: 'Adresse du site' }
-#                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
 
         User:
             class: App\Entity\User

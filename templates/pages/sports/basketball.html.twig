@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pronostics Football{% endblock %}
+{% block title %}Pronostics Basketball{% endblock %}
 {% block container %}
     <div class="container">
         {% include 'utils/breadcrumb.html.twig' %}
@@ -10,29 +10,29 @@
                 {% include 'block/aside.html.twig' %}
                 <div class="container__sports-center-content">
                     <div class="container__sports-center-maintitle" id="container__sports-center-anchor">
-                        <h1>pronostic football</h1>
+                        <h1>pronostic basketball</h1>
                         {{ app.request.attributes.get('_route') }}
                     </div>
                     <div class="container__sports-center-filters">
-                        <a href="{{ path('sports_football') }}">
+                        <a href="{{ path('sports_basketball') }}">
                             <div class="container__sports-center-filter
-                                {% if app.request.attributes.get('_route') == 'sports_football' %}
+                                {% if app.request.attributes.get('_route') == 'sports_basketball' %}
                                     container__sports-center-filter-active
                                 {% endif %}
                                 ">tous
                             </div>
                         </a>
-                        <a href="{{ path('sports_football_today') }}">
+                        <a href="{{ path('sports_basketball_today') }}">
                             <div class="container__sports-center-filter
-                                {% if app.request.attributes.get('_route') == 'sports_football_today' %}
+                                {% if app.request.attributes.get('_route') == 'sports_basketball_today' %}
                                     container__sports-center-filter-active
                                 {% endif %}
                                 ">aujourd'hui
                             </div>
                         </a>
-                        <a href="{{ path('sports_football_tomorrow') }}">
+                        <a href="{{ path('sports_basketball_tomorrow') }}">
                             <div class="container__sports-center-filter
-                                {% if app.request.attributes.get('_route') == 'sports_football_tomorrow' %}
+                                {% if app.request.attributes.get('_route') == 'sports_basketball_tomorrow' %}
                                     container__sports-center-filter-active
                                 {% endif %}
                                 ">demain

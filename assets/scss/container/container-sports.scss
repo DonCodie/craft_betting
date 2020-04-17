@@ -85,7 +85,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         width: 100%;
         column-gap: 10px;
-        row-gap: 20px;
+        row-gap: 40px;
       }
 
       &-prono {
@@ -96,6 +96,10 @@
         box-shadow: 2px 3px 10px 3px $silver;
         text-align: center;
         margin: 0 auto;
+
+        &-red {
+          background-color: rgba($red, 0.2);
+        }
 
         &-all {
           display: block;
@@ -113,6 +117,10 @@
           font-size: 18px;
           padding-top: 15px;
           text-transform: capitalize;
+
+          &-span {
+            text-transform: lowercase;
+          }
         }
 
         &-league {
