@@ -213,6 +213,8 @@ class Prono
     public function setAnalysis(string $analysis): self
     {
         $this->analysis = $analysis;
+
+        return $this;
     }
 
 }
