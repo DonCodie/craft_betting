@@ -66,7 +66,7 @@ class RssExtension extends AbstractExtension
 
         foreach ($this->feedIo->read(self::RSS_FOOTBALL)->getFeed() as $item) {
             $rssfootball [$i]['link'] = $item->getLink();
-            $rssfootball [$i]['image'] = $item->getMedias()[0]->getUrl();
+            $rssfootball [$i]['image'] = isset($item->getMedias()[0]) ? $item->getMedias()[0]->getUrl() : '';
             $rssfootball [$i]['title'] = $this->cutText($item->getTitle(), 30);
             $rssfootball [$i]['description'] = $this->cutText($item->getdescription(), 140);
             $i++;
@@ -141,7 +141,7 @@ class RssExtension extends AbstractExtension
 
         foreach ($this->feedIo->read(self::RSS_TENNIS)->getFeed() as $item) {
             $rsstennis [$i]['link'] = $item->getLink();
-            $rsstennis [$i]['image'] = $item->getMedias()[0]->getUrl();
+            $rsstennis [$i]['image'] = isset($item->getMedias()[0]) ? $item->getMedias()[0]->getUrl() : '';
             $rsstennis [$i]['title'] = $this->cutText($item->getTitle(), 30);
             $rsstennis [$i]['description'] = $item->getdescription();
             $i++;

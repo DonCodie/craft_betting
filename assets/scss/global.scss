@@ -11,6 +11,9 @@
 @import "./pagination/pagination.scss";
 @import "./reset.scss";
 
+/* PAGES */
+@import "./homepage/homepage.scss";
+
 /* BLOCKS */
 
 @import "./account/account.scss";
@@ -20,6 +23,7 @@
 @import "./container/container-sports.scss";
 @import "./footer/footer.scss";
 @import "./header/header.scss";
+@import "./hppronos/hppronos.scss";
 @import "./inscription/inscription.scss";
 @import "./menu/menu.scss";
 @import "./rss/rss.scss";

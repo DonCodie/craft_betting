@@ -1,5 +1,5 @@
 .subscription {
-  width: 60%;
+  width: 48%;
   height: auto;
   margin: 0 auto;
   padding-top: 25px;
@@ -39,7 +39,7 @@
     &-fee {
       width: 25%;
       height: auto;
-      padding: 15px;
+      padding: 35px 10px;
 
       &-block {
         width: 100%;
@@ -47,7 +47,7 @@
         background-color: rgba(0, 0, 0, 0.8);
 
         &-title {
-          font-size: 21px;
+          font-size: 18px;
           line-height: 55px;
           text-align: center;
           font-weight: bold;
@@ -55,18 +55,20 @@
         }
 
         &-subtitle {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: bold;
           text-align: center;
+          padding-bottom: 20px;
         }
 
         &-infos {
-          padding-left: 25px;
-          font-size: 19px;
+          padding-left: 20px;
 
           &-info {
+            font-size: 19px;
             line-height: 40px;
             letter-spacing: 0.2px;
+            list-style-type: initial;
           }
         }
       }

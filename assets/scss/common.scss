@@ -51,3 +51,12 @@ h1, h3 {
 .capitalize {
   text-transform: capitalize;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blur {
+  filter: blur(20px);
+}

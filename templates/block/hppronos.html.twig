@@ -1,0 +1,612 @@
+<div class="hppronos">
+    <p class="hppronos__title">le coin des bons plans</p>
+    <div class="hppronos__pronos">
+        <div class="hppronos__prono">
+            <p class="hppronos__prono-title">le coup sûr du jour</p>
+            <div class="hppronos__prono__contents">
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            20:45
+                        </div>
+                        <div class="hppronos__prono__content-league">
+                            europe - ligue des champions
+                        </div>
+                        <div class="hppronos__prono__content-logos">
+                            <div class="hppronos__prono__content-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligua/real-de-madrid.png') }}"
+                                     alt="logo real-de-madrid">
+                            </div>
+                            <div class="hppronos__prono__content-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille-olympique-sporting-club.png') }}"
+                                     alt="logo lille-olympique-sporting-club">
+                            </div>
+                        </div>
+                        <div class="hppronos__prono__content-teams">
+                            <div class="hppronos__prono__content-team">
+                                real de madrid
+                            </div>
+                            <div class="hppronos__prono__content-team">
+                                lille olympique sporting club
+                            </div>
+                        </div>
+                        <div class="hppronos__prono__content-text">
+                            notre prono :
+                        </div>
+                        <div class="hppronos__prono__content-subtext">
+                            <span class="capitalize">lille olympique sporting club</span> gagne le match
+                            <div class="hppronos__prono__content-triangle"></div>
+                        </div>
+                        <div class="hppronos__prono__content-analysis">
+                            Bien essayé ! <br/>
+                            Pour de vrais pronos, inscrivez-vous et prenez un abonnement !!
+                        </div>
+                        <div class="hppronos__prono__content-loto">
+                            <div class="hppronos__prono__content-loto-result
+                                        hppronos__prono__content-loto-result-crossed">
+                                1
+                            </div>
+                            <div class="hppronos__prono__content-loto-result">
+                                N
+                            </div>
+                            <div class="hppronos__prono__content-loto-result-last">
+                                2
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content">
+                        <div class="hppronos__prono__content-date">
+                            Vendredi 17 avril
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos">
+                            <div class="hppronos__prono__content-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/olympique-de-marseille.png') }}"
+                                     alt="logo olympique-de-marseille">
+                            </div>
+                            <div class="hppronos__prono__content-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille-olympique-sporting-club.png') }}"
+                                     alt="logo lille-olympique-sporting-club">
+                            </div>
+                        </div>
+                        <div class="hppronos__prono__content-teams">
+                            <div class="hppronos__prono__content-team">
+                                olympique de marseille
+                            </div>
+                            <div class="hppronos__prono__content-team">
+                                lille olympique sporting club
+                            </div>
+                        </div>
+                        <div class="hppronos__prono__content-text">
+                            notre prono :
+                        </div>
+                        <div class="hppronos__prono__content-subtext">
+                            <span class="capitalize">olympique de marseille</span> gagne le match
+                            <div class="hppronos__prono__content-triangle"></div>
+                        </div>
+                        <div class="hppronos__prono__content-analysis">
+                            !analyse texte!
+                        </div>
+                        <div class="hppronos__prono__content-loto">
+                            <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match")) or}#}
+{#                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}#}
+                                                hppronos__prono__content-loto-result-crossed
+{#                                            {% endif %}#}
+            ">
+                                1
+                            </div>
+                            <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                N
+                            </div>
+                            <div class="hppronos__prono__content-loto-result-last
+{#                                            {% if (prono.result|trim is same as ("perd le match")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                2
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="hppronos__prono__content-bet">
+                    <div class="hppronos__prono__content-bet-left">
+                        <img src="{{ asset('build/affiliate/betclic.png') }}"
+                             alt="betclic"
+                             class="hppronos__prono__content-bet-left-img">
+                    </div>
+                    <div class="hppronos__prono__content-bet-center">
+                        2.55
+                    </div>
+                    <a href="https://betclic.com/" target="_blank">
+                        <div class="hppronos__prono__content-bet-right">
+                            pariez maintenant
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hppronos__prono">
+            <p class="hppronos__prono-title">le combo sûr</p>
+            <div class="hppronos__prono__contents">
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/olympique-de-marseille.png') }}"
+                                     alt="logo olympique-de-marseille.png">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+                                                hppronos__prono__content-loto-result-crossed">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">2.25</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/paris-saint-germain.png') }}"
+                                     alt="logo paris-saint-germain">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content">
+                        <div class="hppronos__prono__content-date">
+                            Vendredi 17 avril
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/olympique-de-marseille.png') }}"
+                                     alt="logo olympique-de-marseille">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match")) or}#}
+{#                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}#}
+                                                hppronos__prono__content-loto-result-crossed
+{#                                            {% endif %}#}
+            ">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
+{#                                            {% if (prono.result|trim is same as ("perd le match")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">2.25</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille-olympique-sporting-club.png') }}"
+                                     alt="logo lille-olympique-sporting-club">
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/tennis/logos/atp/djokovic.jpg') }}"
+                                     alt="logo djokovic">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
+                                                hppronos__prono__content-loto-result-crossed">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">5.25</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/tennis/logos/atp/tsonga.jpg') }}"
+                                     alt="logo tsonga">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content">
+                        <div class="hppronos__prono__content-date">
+                            Vendredi 17 avril
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/olympique-de-marseille.png') }}"
+                                     alt="logo olympique-de-marseille">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match")) or}#}
+{#                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}#}
+                                                hppronos__prono__content-loto-result-crossed
+{#                                            {% endif %}#}
+            ">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
+{#                                            {% if (prono.result|trim is same as ("perd le match")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">2.25</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille-olympique-sporting-club.png') }}"
+                                     alt="logo lille-olympique-sporting-club">
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            23:15
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            USA - NBA
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/warriors.png') }}"
+                                     alt="logo warriors">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
+                                            hppronos__prono__content-loto-result-crossed">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">8.55</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/knicks.png') }}"
+                                     alt="logo knicks">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    test
+                {% endif %}
+
+                <div class="hppronos__prono__content-bet">
+                    <div class="hppronos__prono__content-bet-left">
+                        <img src="{{ asset('build/affiliate/betclic.png') }}"
+                             alt="betclic"
+                             class="hppronos__prono__content-bet-left-img">
+                    </div>
+                    <div class="hppronos__prono__content-bet-center">
+                        15.83
+                    </div>
+                    <a href="https://betclic.com/" target="_blank">
+                        <div class="hppronos__prono__content-bet-right">
+                            pariez maintenant
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hppronos__prono">
+            <p class="hppronos__prono-title">le combo risqué</p>
+            <div class="hppronos__prono__contents">
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            USA - NBA
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/bulls.png') }}"
+                                     alt="logo bulls">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+                                                hppronos__prono__content-loto-result-crossed">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">3.40</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/celtics.png') }}"
+                                     alt="logo celtics">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content">
+                        <div class="hppronos__prono__content-date">
+                            Vendredi 17 avril
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Ligue 1
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/olympique-de-marseille.png') }}"
+                                     alt="logo olympique-de-marseille">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match")) or}#}
+{#                            (prono.result|trim is same as ("gagne le match ou fait match nul")) %}#}
+                                                hppronos__prono__content-loto-result-crossed
+{#                                            {% endif %}#}
+            ">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
+{#                                            {% if (prono.result|trim is same as ("gagne le match ou fait match nul")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
+{#                                            {% if (prono.result|trim is same as ("perd le match")) or#}
+{#                            (prono.result|trim is same as ("perd le match ou fait match nul")) %}#}
+{#                                                hppronos__prono__content-loto-result-crossed#}
+{#                                            {% endif %}#}
+            ">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">2.25</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille-olympique-sporting-club.png') }}"
+                                     alt="logo lille-olympique-sporting-club">
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            France - Premier League
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/premierleague/liverpool.png') }}"
+                                     alt="logo liverpool">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
+                                                hppronos__prono__content-loto-result-crossed">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">3.40</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/foot/logos/premierleague/west-ham.png') }}"
+                                     alt="logo west-ham">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            19:30
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            International - ATP
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/tennis/logos/atp/federer.jpg') }}"
+                                     alt="logo federer">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result
+                                                hppronos__prono__content-loto-result-crossed">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">7.60</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/tennis/logos/atp/agut.jpg') }}"
+                                     alt="logo agut">
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if not app.user or app.user.vipStatus is same as ('default') %}
+                    <div class="hppronos__prono__content blur">
+                        <div class="hppronos__prono__content-date">
+                            Samedi 1 janvier 2050
+                            <span class="hppronos__prono__content-date-span">à</span>
+                            23:15
+                        </div>
+                        <div class="hppronos__prono__content-league-combo">
+                            USA - NBA
+                        </div>
+                        <div class="hppronos__prono__content-logos-combo">
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/hornets.png') }}"
+                                     alt="logo hornets">
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <div class="hppronos__prono__content-loto-combo">
+                                    <div class="hppronos__prono__content-loto-result">
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
+                                            hppronos__prono__content-loto-result-crossed">
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                    <span class="hppronos__prono__content-loto-odd-combo-bold">8.55</span>
+                                </div>
+                            </div>
+                            <div class="hppronos__prono__content-logo-combo">
+                                <img src="{{ asset('build/container/basket/logos/nba/lakers.png') }}"
+                                     alt="logo lakers">
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    test
+                {% endif %}
+
+                <div class="hppronos__prono__content-bet">
+                    <div class="hppronos__prono__content-bet-left">
+                        <img src="{{ asset('build/affiliate/betclic.png') }}"
+                             alt="betclic"
+                             class="hppronos__prono__content-bet-left-img">
+                    </div>
+                    <div class="hppronos__prono__content-bet-center">
+                        87.50
+                    </div>
+                    <a href="https://betclic.com/" target="_blank">
+                        <div class="hppronos__prono__content-bet-right">
+                            pariez maintenant
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
