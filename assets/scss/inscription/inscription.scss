@@ -1,85 +1,67 @@
-.inscription {
-  width: 100%;
-  height: auto;
-  position: relative;
-  line-height: 75px;
-  text-align: center;
-  background-color: black;
-  color: $green;
-  animation: textgrowth linear 0.5s infinite alternate;
-
-  @media only screen and (max-width: $mobile) {
-    font-size: 14.5px;
-    line-height: 20px;
-    padding: 10px 0;
-  }
-  @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-    font-size: 15px;
-  }
-  @media only screen and (min-width: $desktop) {
+/* DESKTOP */
+@media screen and (min-width: $desktop) {
+  .inscription {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    width: 100%;
+    line-height: 75px;
     font-size: 25px;
+    text-align: center;
+    background-color: black;
+    color: $green;
+    animation: textgrowth linear 0.5s infinite alternate;
+
+    &__para {
+      width: 100%;
+    }
+
+    &__arrow {
+      background: url("../../images/inscription/arrow.png") no-repeat;
+
+      &-left {
+        background-position: right;
+      }
+      &-right {
+        background-position: left;
+      }
+    }
   }
 
-  &__para {
-    @media only screen and (max-width: $mobile) {
-      width: 75%;
-      margin: 0 auto;
+  /* Animation */
+  @keyframes textgrowth {
+    0% {
+      font-size: 25px;
     }
-    @media only screen and (min-width: $tablet-min) {
+    100% {
+      font-size: 25.5px;
+    }
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .inscription {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    width: 100%;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: center;
+    background-color: black;
+    color: $green;
+    animation: textgrowth linear 0.5s infinite alternate;
+
+    &__arrow {
+      background: url("../../images/inscription/arrow.png") no-repeat;
+      background-position: center;
+    }
+
+    &__para {
       width: 100%;
     }
   }
 
-  &:before {
-    content: url("../../images/inscription/arrow.png");
-    position: absolute;
-
-    @media only screen and (max-width: $mobile) {
-      top: 25%;
-      left: 2%;
-    }
-    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-      top: 15%;
-      left: 2%;
-    }
-    @media only screen and (min-width: $desktop) {
-      top: 10%;
-      left: 19%;
-    }
-  }
-
-  &:after {
-    content: url("../../images/inscription/arrow.png");
-    position: absolute;
-
-    @media only screen and (max-width: $mobile) {
-      top: 25%;
-      right: 2%;
-    }
-    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-      top: 15%;
-      right: 2%;
-    }
-    @media only screen and (min-width: $desktop) {
-      top: 10%;
-      right: 19%;
-    }
-  }
-}
-
-/* Animation */
-@media only screen and (max-width: $mobile) {
-  @keyframes textgrowth {
-    0% {
-      font-size: 14.5px;
-    }
-    100% {
-      font-size: 15px;
-    }
-  }
-}
-
-@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  /* Animation */
   @keyframes textgrowth {
     0% {
       font-size: 15px;
@@ -90,13 +72,47 @@
   }
 }
 
-@media only screen and (min-width: $desktop) {
+/* MOBILE */
+@media screen and (max-width: $mobile) {
+  .inscription {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px 0;
+    font-size: 14.5px;
+    line-height: 20px;
+    text-align: center;
+    color: $green;
+    background-color: black;
+    animation: textgrowth linear 0.5s infinite alternate;
+
+    &__para {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    &:before {
+      content: url("../../images/inscription/arrow.png");
+      position: absolute;
+      top: 25%;
+      left: 2%;
+    }
+
+    &:after {
+      content: url("../../images/inscription/arrow.png");
+      position: absolute;
+      top: 25%;
+      right: 2%;
+    }
+  }
+
+  /* Animation */
   @keyframes textgrowth {
     0% {
-      font-size: 25px;
+      font-size: 17px;
     }
     100% {
-      font-size: 25.5px;
+      font-size: 17.5px;
     }
   }
 }
