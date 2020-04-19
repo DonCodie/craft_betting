@@ -7,7 +7,10 @@ easy_admin:
             favicon: '/build/favicon/favicon.png'
         menu:
             - label: 'gérer les pronostics'
-            - { entity: 'Prono', icon: 'newspaper', label: 'Pronostics' }
+            - { entity: 'Prono', icon: 'newspaper', label: 'Pronos Simples' }
+            - { entity: 'PronoSur', icon: 'newspaper', label: 'Prono Sûr Du Jour (hp)' }
+            - { entity: 'PronoComboSafe', icon: 'newspaper', label: 'Pronos Combo Sûrs (hp)' }
+            - { entity: 'PronoComboRisky', icon: 'newspaper', label: 'Pronos Combo Risqués (hp)' }
 
             - label: 'gérer les sites partenaires'
             - label: 'Sites Web et Adresses'
@@ -26,9 +29,102 @@ easy_admin:
     entities:
         Prono:
             class: App\Entity\Prono
-            label: 'Pronostics'
+            label: 'Pronostics Simples'
             list:
                 title: 'Liste des pronostics'
+                fields:
+                    - { property: 'id', label: 'ID' }
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'date', label: 'Date' }
+                    - { property: 'time', label: 'Horaire', format: 'H:i' }
+                    - { property: 'countryAndLeague', label: 'Pays et Ligue' }
+                    - { property: 'homeTeam', label: 'Domicile' }
+                    - { property: 'visitorTeam', label: 'Éxterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site Web' }
+                    - { property: 'websiteUrl', label: 'Adresse Site Web' }
+            form:
+                fields:
+                    - { property: 'date', label: 'Date'}
+                    - { property: 'time', label: 'Heure'}
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'countryAndLeague', label: 'Championnat' }
+                    - { property: 'homeTeam', label: 'Équipe à domicile' }
+                    - { property: 'visitorTeam', label: 'Équipe à l''exterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site' }
+                    - { property: 'websiteUrl', label: 'Adresse du site' }
+                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+
+        PronoSur:
+            class: App\Entity\PronoSur
+            label: 'Pronostics Sûrs'
+            list:
+                title: 'Liste des pronostics Sûrs'
+                fields:
+                    - { property: 'id', label: 'ID' }
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'date', label: 'Date' }
+                    - { property: 'time', label: 'Horaire', format: 'H:i' }
+                    - { property: 'countryAndLeague', label: 'Pays et Ligue' }
+                    - { property: 'homeTeam', label: 'Domicile' }
+                    - { property: 'visitorTeam', label: 'Éxterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site Web' }
+                    - { property: 'websiteUrl', label: 'Adresse Site Web' }
+            form:
+                fields:
+                    - { property: 'date', label: 'Date'}
+                    - { property: 'time', label: 'Heure'}
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'countryAndLeague', label: 'Championnat' }
+                    - { property: 'homeTeam', label: 'Équipe à domicile' }
+                    - { property: 'visitorTeam', label: 'Équipe à l''exterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site' }
+                    - { property: 'websiteUrl', label: 'Adresse du site' }
+                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+
+        PronoComboSafe :
+            class: App\Entity\PronoComboSafe
+            label: 'Pronostics Combo Sûrs'
+            list:
+                title: 'Liste Des Combo Sûrs'
+                fields:
+                    - { property: 'id', label: 'ID' }
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'date', label: 'Date' }
+                    - { property: 'time', label: 'Horaire', format: 'H:i' }
+                    - { property: 'countryAndLeague', label: 'Pays et Ligue' }
+                    - { property: 'homeTeam', label: 'Domicile' }
+                    - { property: 'visitorTeam', label: 'Éxterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site Web' }
+                    - { property: 'websiteUrl', label: 'Adresse Site Web' }
+            form:
+                fields:
+                    - { property: 'date', label: 'Date'}
+                    - { property: 'time', label: 'Heure'}
+                    - { property: 'sport', label: 'Sport' }
+                    - { property: 'countryAndLeague', label: 'Championnat' }
+                    - { property: 'homeTeam', label: 'Équipe à domicile' }
+                    - { property: 'visitorTeam', label: 'Équipe à l''exterieur' }
+                    - { property: 'result', label: 'Résultat' }
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'website', label: 'Site' }
+                    - { property: 'websiteUrl', label: 'Adresse du site' }
+                    - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+
+        PronoComboRisky:
+            class: App\Entity\PronoComboRisky
+            label: 'Pronostics Combo Risqués'
+            list:
+                title: 'Liste Des Combo Risqués'
                 fields:
                     - { property: 'id', label: 'ID' }
                     - { property: 'sport', label: 'Sport' }
