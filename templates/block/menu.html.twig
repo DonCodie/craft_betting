@@ -1,4 +1,4 @@
-<div class="menu">
+<div class="menu mobile-hide tablet-show desktop-show">
     <div class="menu__grid">
         <a class="menu__grid-link" href="{{ path('homepage') }}">
             <div class="menu__grid-item {{ app.request.get('_route') == 'homepage' ? 'menu__grid-item-active' }}">
@@ -25,12 +25,17 @@
         </div>
         <a href="">
             <div class="menu__grid-item {{ app.request.get('_route') == '???' ? 'menu__grid-item-active' }}">
-                resultats / stats
+                resultats
             </div>
         </a>
         <a href="">
             <div class="menu__grid-item {{ app.request.get('_route') == '???' ? 'menu__grid-item-active' }}">
-                ?????
+                parrainage
+            </div>
+        </a>
+        <a href="">
+            <div class="menu__grid-item {{ app.request.get('_route') == '???' ? 'menu__grid-item-active' }}">
+                forum
             </div>
         </a>
     </div>
