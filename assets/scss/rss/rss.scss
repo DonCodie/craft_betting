@@ -1,149 +1,500 @@
-.rss {
-  &__container {
-    width: 100%;
-    height: 280px;
-    background: url("../../images/rss/rss-bc.png") no-repeat;
-    padding-top: 30px;
-
-    &-maintitle {
-      color: $white;
-      text-align: center;
-      padding-bottom: 15px;
-      font-size: 25px;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: overline underline;
-    }
-  }
-
-  &__sports-container {
-    width: 100%;
-    height: 170px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  &__sport {
-    width: 33%;
-    height: 220px;
-    box-sizing: border-box;
-
-    &-title {
-      color: $white;
-      text-align: center;
-      font-size: 22px;
-      letter-spacing: 1px;
-      font-weight: bold;
-      text-transform: uppercase;
-      line-height: 40px;
-    }
-
-    &-slider {
-      width: 80%;
-      margin: 0 auto;
-      border: 1px solid $black;
-      height: auto;
-    }
-
-    &-item {
-      border: 1px solid $black;
-      position: relative;
-      z-index: 0;
-      width: 30%;
-    }
-
-  }
-
-  &__item {
-    box-sizing: border-box;
-    border: 1px solid $black;
-    width: 30%;
-    position: relative;
-
-    &-img {
-
-    }
-
-    &-imgsize {
+/* DESKTOP */
+@media screen and (min-width: $desktop) {
+  .rss {
+    &__container {
       width: 100%;
-      height: 110px;
-      object-fit: cover;
-    }
+      height: 280px;
+      background: url("../../images/rss/rss-bc.png") no-repeat;
+      padding-top: 30px;
 
-    &-title {
-      width: 100%;
-      background-color: rgba($green, 0.8);
-      text-align: left;
-
-      &-para {
-        color: $black;
+      &-maintitle {
+        color: $white;
+        text-align: center;
+        padding-bottom: 15px;
+        font-size: 25px;
         font-weight: bold;
-        text-shadow: 1px 1px 2px $white;
-        padding: 5px 5px;
+        text-transform: uppercase;
+        text-decoration: overline underline;
       }
     }
 
-    &-description {
-      opacity: 0;
-      height: 160px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: $green;
-      background-color: rgba($black, 0.9);
-      padding: 10px 10px 0 10px;
-      text-align: left;
+    &__sports-container {
+      width: 100%;
+      height: 170px;
+      display: flex;
+      justify-content: space-evenly;
+    }
 
-      &:hover {
-        opacity: 1;
+    &__sport {
+      width: 33%;
+      height: 220px;
+      box-sizing: border-box;
+
+      &-title {
+        color: $white;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+      }
+
+      &-slider {
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid $black;
+        height: auto;
+      }
+
+      &-item {
+        border: 1px solid $black;
+        position: relative;
+        z-index: 0;
+        width: 30%;
+      }
+
+    }
+
+    &__item {
+      box-sizing: border-box;
+      border: 1px solid $black;
+      width: 30%;
+      position: relative;
+
+      &-img {
+
+      }
+
+      &-imgsize {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+      }
+
+      &-title {
+        width: 100%;
+        height: 45px;
+        background-color: rgba($green, 0.8);
+        text-align: left;
+
+        &-para {
+          color: $black;
+          font-weight: bold;
+          text-shadow: 1px 1px 2px $white;
+          padding: 5px 5px;
+        }
+      }
+
+      &-description {
+        opacity: 0;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $green;
+        background-color: rgba($black, 0.9);
+        padding: 10px 10px 0 10px;
+        text-align: left;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__arrow-div {
+      width: 14%;
+    }
+
+    &__arrow {
+      width: 40px;
+      position: absolute;
+      top: 35%;
+      border: none;
+
+      &-previous {
+        background: url("../../images/rss/arrow_left.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        left: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_left-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-next {
+        background: url("../../images/rss/arrow_right.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        right: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_right-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .rss {
+    &__container {
+      width: 100%;
+      height: 280px;
+      background: url("../../images/rss/rss-bc.png") no-repeat;
+      padding-top: 30px;
+
+      &-maintitle {
+        color: $white;
+        text-align: center;
+        padding-bottom: 15px;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: overline underline;
+      }
+    }
+
+    &__sports-container {
+      width: 100%;
+      height: 170px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__sport {
+      width: 33%;
+      height: 220px;
+      box-sizing: border-box;
+
+      &-title {
+        color: $white;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+      }
+
+      &-slider {
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid $black;
+        height: auto;
+      }
+
+      &-item {
+        border: 1px solid $black;
+        position: relative;
+        z-index: 0;
+        width: 30%;
+      }
+
+    }
+
+    &__item {
+      box-sizing: border-box;
+      border: 1px solid $black;
+      width: 30%;
+      position: relative;
+
+      &-img {
+
+      }
+
+      &-imgsize {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+      }
+
+      &-title {
+        width: 100%;
+        background-color: rgba($green, 0.8);
+        text-align: left;
+
+        &-para {
+          color: $black;
+          font-weight: bold;
+          text-shadow: 1px 1px 2px $white;
+          padding: 5px 5px;
+        }
+      }
+
+      &-description {
+        opacity: 0;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $green;
+        background-color: rgba($black, 0.9);
+        padding: 10px 10px 0 10px;
+        text-align: left;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__arrow-div {
+      width: 14%;
+    }
+
+    &__arrow {
+      width: 40px;
+      position: absolute;
+      top: 35%;
+      border: none;
+
+      &-previous {
+        background: url("../../images/rss/arrow_left.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        left: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_left-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-next {
+        background: url("../../images/rss/arrow_right.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        right: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_right-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: $mobile) {
+  .rss {
+    &__container {
+      width: 100%;
+      height: 280px;
+      background: url("../../images/rss/rss-bc.png") no-repeat;
+      padding-top: 20px;
+
+      &-maintitle {
+        color: $white;
+        text-align: center;
+        padding-bottom: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: overline underline;
+      }
+    }
+
+    &__sports-container {
+      width: 100%;
+      height: 170px;
+      justify-content: space-evenly;
+    }
+
+    &__sport {
+      width: 80%;
+      height: 220px;
+      margin: 0 auto;
+      box-sizing: border-box;
+
+      &-foot {
+        display: block;
+      }
+
+      &-basket {
+        display: block;
+      }
+
+      &-tennis {
+        display: block;
+      }
+
+      &-title {
+        color: $white;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+      }
+
+      &-subtitles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: $white;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+        padding-bottom: 10px;
+
+        &-active {
+          color: $green;
+        }
+      }
+
+      &-subtitles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: $white;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+        padding-bottom: 10px;
+      }
+
+      &-subtitle {
+        &-active {
+          color: $green;
+        }
+      }
+
+      &-slider {
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid $black;
+        height: auto;
+      }
+
+      &-item {
+        border: 1px solid $black;
+        position: relative;
+        z-index: 0;
+        width: 30%;
+      }
+
+    }
+
+    &__item {
+      box-sizing: border-box;
+      border: 1px solid $black;
+      width: 30%;
+      position: relative;
+
+      &-img {
+
+      }
+
+      &-imgsize {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+      }
+
+      &-title {
+        width: 100%;
+        height: 50px;
+        background-color: rgba($green, 0.8);
+        text-align: left;
+
+        &-para {
+          color: $black;
+          font-weight: bold;
+          text-shadow: 1px 1px 2px $white;
+          padding: 5px 5px;
+        }
+      }
+
+      &-description {
+        opacity: 0;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $green;
+        background-color: rgba($black, 0.9);
+        padding: 10px 10px 0 10px;
+        text-align: left;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__arrow-div {
+      width: 14%;
+    }
+
+    &__arrow {
+      width: 40px;
+      position: absolute;
+      top: 35%;
+      border: none;
+
+      &-previous {
+        background: url("../../images/rss/arrow_left.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        left: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_left-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-next {
+        background: url("../../images/rss/arrow_right.png") no-repeat;
+        height: 40px;
+        position: absolute;
+        right: -50px;
+
+        &:hover {
+          cursor: pointer;
+          background: url("../../images/rss/arrow_right-hover.png") no-repeat;
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
-
-  &__arrow-div {
-    width: 14%;
-  }
-
-  &__arrow {
-    width: 40px;
-    position: absolute;
-    top: 35%;
-    border: none;
-
-    &-previous {
-      background: url("../../images/rss/arrow_left.png") no-repeat;
-      height: 40px;
-      position: absolute;
-      left: -50px;
-
-      &:hover {
-        cursor: pointer;
-        background: url("../../images/rss/arrow_left-hover.png") no-repeat;
-      }
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    &-next {
-      background: url("../../images/rss/arrow_right.png") no-repeat;
-      height: 40px;
-      position: absolute;
-      right: -50px;
-
-      &:hover {
-        cursor: pointer;
-        background: url("../../images/rss/arrow_right-hover.png") no-repeat;
-      }
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-  }
-
 }
 
 .slick-list {

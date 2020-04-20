@@ -46,7 +46,7 @@ easy_admin:
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
             form:
                 fields:
-                    - { property: 'date', label: 'Date'}
+                    - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
                     - { property: 'time', label: 'Heure'}
                     - { property: 'sport', label: 'Sport' }
                     - { property: 'countryAndLeague', label: 'Championnat' }
@@ -77,7 +77,7 @@ easy_admin:
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
             form:
                 fields:
-                    - { property: 'date', label: 'Date'}
+                    - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
                     - { property: 'time', label: 'Heure'}
                     - { property: 'sport', label: 'Sport' }
                     - { property: 'countryAndLeague', label: 'Championnat' }
@@ -108,7 +108,7 @@ easy_admin:
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
             form:
                 fields:
-                    - { property: 'date', label: 'Date'}
+                    - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
                     - { property: 'time', label: 'Heure'}
                     - { property: 'sport', label: 'Sport' }
                     - { property: 'countryAndLeague', label: 'Championnat' }
@@ -139,7 +139,7 @@ easy_admin:
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
             form:
                 fields:
-                    - { property: 'date', label: 'Date'}
+                    - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
                     - { property: 'time', label: 'Heure'}
                     - { property: 'sport', label: 'Sport' }
                     - { property: 'countryAndLeague', label: 'Championnat' }
