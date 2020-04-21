@@ -157,12 +157,12 @@
       width: 100%;
       height: 280px;
       background: url("../../images/rss/rss-bc.png") no-repeat;
-      padding-top: 30px;
+      padding-top: 20px;
 
       &-maintitle {
         color: $white;
         text-align: center;
-        padding-bottom: 15px;
+        padding-bottom: 5px;
         font-size: 25px;
         font-weight: bold;
         text-transform: uppercase;
@@ -173,13 +173,13 @@
     &__sports-container {
       width: 100%;
       height: 170px;
-      display: flex;
       justify-content: space-evenly;
     }
 
     &__sport {
-      width: 33%;
+      width: 80%;
       height: 220px;
+      margin: 0 auto;
       box-sizing: border-box;
 
       &-title {
@@ -192,11 +192,61 @@
         line-height: 40px;
       }
 
+      &-subtitles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        color: $white;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 40px;
+        padding-bottom: 10px;
+
+        &-active {
+          color: $green;
+        }
+      }
+
+      &-subtitle {
+        &-active {
+          color: $green;
+        }
+      }
+
+      &-sliders {
+        position: relative;
+      }
+
       &-slider {
         width: 80%;
         margin: 0 auto;
         border: 1px solid $black;
         height: auto;
+
+        &-foot {
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &-basket {
+          visibility: hidden;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &-tennis {
+          visibility: hidden;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
       }
 
       &-item {
@@ -226,6 +276,7 @@
 
       &-title {
         width: 100%;
+        height: 65px;
         background-color: rgba($green, 0.8);
         text-align: left;
 
@@ -295,9 +346,7 @@
           outline: none;
         }
       }
-
     }
-
   }
 }
 
@@ -333,18 +382,6 @@
       margin: 0 auto;
       box-sizing: border-box;
 
-      &-foot {
-        display: block;
-      }
-
-      &-basket {
-        display: block;
-      }
-
-      &-tennis {
-        display: block;
-      }
-
       &-title {
         color: $white;
         text-align: center;
@@ -371,22 +408,14 @@
         }
       }
 
-      &-subtitles {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        color: $white;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 40px;
-        padding-bottom: 10px;
-      }
-
       &-subtitle {
         &-active {
           color: $green;
         }
+      }
+
+      &-sliders {
+        position: relative;
       }
 
       &-slider {
@@ -394,6 +423,30 @@
         margin: 0 auto;
         border: 1px solid $black;
         height: auto;
+
+        &-foot {
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &-basket {
+          visibility: hidden;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &-tennis {
+          visibility: hidden;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
       }
 
       &-item {

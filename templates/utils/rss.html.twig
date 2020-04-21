@@ -5,7 +5,7 @@
 <div class="rss__container">
     <p class="rss__container-maintitle">Les dernières news</p>
 
-    <div class="rss__sports-container mobile-hide tablet-show desktop-show">
+    <div class="rss__sports-container mobile-hide tablet-hide desktop-show">
         <div class="rss__sport">
             <p class="rss__sport-title">Football</p>
             <div class="rss__sport-slider">
@@ -79,58 +79,61 @@
             <div class="rss__sport-subtitle rss__sport-subtitle-basket">Basketball</div>
             <div class="rss__sport-subtitle rss__sport-subtitle-tennis">Tennis</div>
         </div>
-        <div class="rss__sport rss__sport-foot">
-            <div class="rss__sport-slider">
-                {% for item in rss().rssfootball %}
-                    <div class="rss__item">
-                        <a href="{{ item.link }}" target="_blank">
-                            <div class="rss__item-img">
-                                <img class="rss__item-imgsize"
-                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-foot.png') }} {% endif %}"
-                                     alt="{{ item.title }}">
-                            </div>
-                            <div class="rss__item-title">
-                                <p class="rss__item-title-para">{{ item.title }}</p>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+        <div class="rss__sport-sliders">
+            <div class="rss__sport rss__sport-slider-foot">
+                <div class="rss__sport-slider rss__sport-slider-foot">
+                    {% for item in rss().rssfootball %}
+                        <div class="rss__item">
+                            <a href="{{ item.link }}" target="_blank">
+                                <div class="rss__item-img">
+                                    <img class="rss__item-imgsize"
+                                         src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-foot.png') }} {% endif %}"
+                                         alt="{{ item.title }}">
+                                </div>
+                                <div class="rss__item-title">
+                                    <p class="rss__item-title-para">{{ item.title }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                </div>
             </div>
-        </div>
-        <div class="rss__sport rss__sport-basket">
-            <div class="rss__sport-slider">
-                {% for item in rss().rssbasket %}
-                    <div class="rss__item">
-                        <a href="{{ item.link }}" target="_blank">
-                            <div class="rss__item-img">
-                                <img class="rss__item-imgsize"
-                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-nba.png') }} {% endif %}"
-                                     alt="{{ item.title }}">
-                            </div>
-                            <div class="rss__item-title">
-                                <p class="rss__item-title-para">{{ item.title }}</p>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+            <div class="rss__sport rss__sport-slider-basket">
+                <div class="rss__sport-slider rss__sport-slider-basket">
+                    {% for item in rss().rssbasket %}
+                        <div class="rss__item">
+                            <a href="{{ item.link }}" target="_blank">
+                                <div class="rss__item-img">
+                                    <img class="rss__item-imgsize"
+                                         src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-nba.png') }} {% endif %}"
+                                         alt="{{ item.title }}">
+                                </div>
+                                <div class="rss__item-title">
+                                    <p class="rss__item-title-para">{{ item.title }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-        <div class="rss__sport rss__sport-tennis">
-            <div class="rss__sport-slider">
-                {% for item in rss().rsstennis %}
-                    <div class="rss__item">
-                        <a href="{{ item.link }}" target="_blank">
-                            <div class="rss__item-img">
-                                <img class="rss__item-imgsize"
-                                     src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-tennis.png') }} {% endif %}"
-                                     alt="{{ item.title }}">
-                            </div>
-                            <div class="rss__item-title">
-                                <p class="rss__item-title-para">{{ item.title }}</p>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+            <div class="rss__sport rss__sport-slider-tennis">
+                <div class="rss__sport-slider rss__sport-tennis">
+                    {% for item in rss().rsstennis %}
+                        <div class="rss__item">
+                            <a href="{{ item.link }}" target="_blank">
+                                <div class="rss__item-img">
+                                    <img class="rss__item-imgsize"
+                                         src="{% if item.image is not empty %} {{ item.image }} {% else %} {{ asset('build/rss/default-tennis.png') }} {% endif %}"
+                                         alt="{{ item.title }}">
+                                </div>
+                                <div class="rss__item-title">
+                                    <p class="rss__item-title-para">{{ item.title }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
