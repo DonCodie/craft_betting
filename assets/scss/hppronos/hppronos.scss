@@ -159,6 +159,10 @@
           border-left: 20px solid #ff0101;
           vertical-align: middle;
           margin-left: 10px;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
         &-analysis {
@@ -431,18 +435,21 @@
         }
 
         &-triangle {
-          display: inline-block;
-          border-top: 12px solid transparent;
-          border-bottom: 12px solid transparent;
-          border-left: 20px solid #ff0101;
+          width: 20px;
+          height: 20px;
           vertical-align: middle;
-          margin-left: 10px;
+          display: inline-block;
+          background: url("../../images/hppronos/triangle-right.png") no-repeat;
+          background-size: contain;
+          background-color: $red;
+          margin-left: 5px;
         }
 
         &-analysis {
           display: none;
           width: 100%;
           height: auto;
+          margin-bottom: 20px;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
           background-color: $blue;
@@ -721,6 +728,7 @@
           display: none;
           width: 100%;
           height: auto;
+          margin-bottom: 20px;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
           background-color: $blue;
