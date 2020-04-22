@@ -1,4 +1,26 @@
-.tips-and-vip__container {
-  width: 100%;
-  height: 620px;
+/* DESKTOP */
+@media screen and (min-width: $desktop) {
+  .tips-and-vip__container {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .tips-and-vip__container {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: $mobile) {
+  .tips-and-vip__container {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }

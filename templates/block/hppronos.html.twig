@@ -57,119 +57,127 @@
                         </div>
                     </div>
                 {% else %}
-                    {#Set var before loop because variables defined inside a loop are scoped to that loop#}
-                    {% set odd = '' %}
-                    {% set website = '' %}
-                    {% set websiteUrl = '' %}
-                    {% for todayPronoSafe in todayPronoSafes %}
-                        {# set vars#}
-                        {% set countryAndLeague = todayPronoSafe.countryAndLeague | split('-') %}
-                        {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
-                        {% set homeTeam = todayPronoSafe.homeTeam  | replace({' ' : '-'}) | trim %}
-                        {% set visitorTeam = todayPronoSafe.visitorTeam  | replace({' ' : '-'}) | trim %}
-                        {% set odd = todayPronoSafe.odd %}
-                        {% set website = todayPronoSafe.website %}
-                        {% set websiteUrl = todayPronoSafe.websiteUrl %}
+                    {% if todayPronoSafes %}
+                        {#Set var before loop because variables defined inside a loop are scoped to that loop#}
+                        {% set odd = '' %}
+                        {% set website = '' %}
+                        {% set websiteUrl = '' %}
+                        {% for todayPronoSafe in todayPronoSafes %}
+                            {# set vars#}
+                            {% set countryAndLeague = todayPronoSafe.countryAndLeague | split('-') %}
+                            {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
+                            {% set homeTeam = todayPronoSafe.homeTeam  | replace({' ' : '-'}) | trim %}
+                            {% set visitorTeam = todayPronoSafe.visitorTeam  | replace({' ' : '-'}) | trim %}
+                            {% set odd = todayPronoSafe.odd %}
+                            {% set website = todayPronoSafe.website %}
+                            {% set websiteUrl = todayPronoSafe.websiteUrl %}
 
-                        <div class="hppronos__prono__content">
-                            <div class="hppronos__prono__content-date">
-                                {{ todayPronoSafe.date | format_date('full', locale='fr') }}
-                                <span class="hppronos__prono__content-date-span">à</span>
-                                {{ todayPronoSafe.time | format_time('short', locale='fr') }}
-                            </div>
-                            <div class="hppronos__prono__content-league">
-                                {{ todayPronoSafe.countryAndLeague }}
-                            </div>
-                            <div class="hppronos__prono__content-logos">
-                                <div class="hppronos__prono__content-logo">
-                                    <img src="{{ asset('build/container/' ~ todayPronoSafe.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
-                                         alt="logo olympique-de-marseille">
+                            <div class="hppronos__prono__content">
+                                <div class="hppronos__prono__content-date">
+                                    {{ todayPronoSafe.date | format_date('full', locale='fr') }}
+                                    <span class="hppronos__prono__content-date-span">à</span>
+                                    {{ todayPronoSafe.time | format_time('short', locale='fr') }}
                                 </div>
-                                <div class="hppronos__prono__content-logo">
-                                    <img src="{{ asset('build/container/' ~ todayPronoSafe.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
-                                         alt="logo lille-olympique-sporting-club">
+                                <div class="hppronos__prono__content-league">
+                                    {{ todayPronoSafe.countryAndLeague }}
                                 </div>
-                            </div>
-                            <div class="hppronos__prono__content-teams">
-                                <div class="hppronos__prono__content-team">
-                                    {{ todayPronoSafe.homeTeam }}
+                                <div class="hppronos__prono__content-logos">
+                                    <div class="hppronos__prono__content-logo">
+                                        <img src="{{ asset('build/container/' ~ todayPronoSafe.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
+                                             alt="logo olympique-de-marseille">
+                                    </div>
+                                    <div class="hppronos__prono__content-logo">
+                                        <img src="{{ asset('build/container/' ~ todayPronoSafe.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
+                                             alt="logo lille-olympique-sporting-club">
+                                    </div>
                                 </div>
-                                <div class="hppronos__prono__content-team">
-                                    {{ todayPronoSafe.visitorTeam }}
+                                <div class="hppronos__prono__content-teams">
+                                    <div class="hppronos__prono__content-team">
+                                        {{ todayPronoSafe.homeTeam }}
+                                    </div>
+                                    <div class="hppronos__prono__content-team">
+                                        {{ todayPronoSafe.visitorTeam }}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="hppronos__prono__content-text">
-                                notre prono :
-                            </div>
-                            <div class="hppronos__prono__content-subtext">
-                                <span class="capitalize">{{ todayPronoSafe.homeTeam }}</span> {{ todayPronoSafe.result }}
-                                <div class="hppronos__prono__content-triangle"></div>
-                            </div>
-                            <div class="hppronos__prono__content-analysis">
-                                {{ todayPronoSafe.analysis }}
-                            </div>
-                            <div class="hppronos__prono__content-loto">
-                                <div class="hppronos__prono__content-loto-result
+                                <div class="hppronos__prono__content-text">
+                                    notre prono :
+                                </div>
+                                <div class="hppronos__prono__content-subtext">
+                                    <span class="capitalize">{{ todayPronoSafe.homeTeam }}</span> {{ todayPronoSafe.result }}
+                                    <div class="hppronos__prono__content-triangle"></div>
+                                </div>
+                                <div class="hppronos__prono__content-analysis">
+                                    {{ todayPronoSafe.analysis }}
+                                </div>
+                                <div class="hppronos__prono__content-loto">
+                                    <div class="hppronos__prono__content-loto-result
                                             {% if (todayPronoSafe.result|trim is same as ("gagne le match"))
-                                    or (todayPronoSafe.result|trim is same as ("gagne ou fait match nul")) %}
+                                        or (todayPronoSafe.result|trim is same as ("gagne ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}
                                 ">
-                                    1
-                                </div>
-                                <div class="hppronos__prono__content-loto-result
+                                        1
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result
                                             {% if (todayPronoSafe.result|trim is same as ("gagne ou fait match nul"))
-                                    or (todayPronoSafe.result|trim is same as ("perd ou fait match nul")) %}
+                                        or (todayPronoSafe.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}
                                 ">
-                                    N
-                                </div>
-                                <div class="hppronos__prono__content-loto-result-last
+                                        N
+                                    </div>
+                                    <div class="hppronos__prono__content-loto-result-last
                                             {% if (todayPronoSafe.result|trim is same as ("perd le match"))
-                                    or (todayPronoSafe.result|trim is same as ("perd ou fait match nul")) %}
+                                        or (todayPronoSafe.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}
                                 ">
-                                    2
+                                        2
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                <div class="hppronos__prono__content-bet">
-                    <div class="hppronos__prono__content-bet-left">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            <img src="{{ asset('build/affiliate/betclic.png') }}"
-                                 alt="betclic"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% else %}
-                            <img src="{{ asset('build/affiliate/'~website~'.png') }}"
-                                 alt="{{ website }}"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% endif %}
-                    </div>
-                    <div class="hppronos__prono__content-bet-center">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            1.25
-                        {% else %}
-                            {{ odd }}
-                        {% endif %}
-                    </div>
-                    {% if not app.user or app.user.vipStatus is same as ('default') %}
-                        <a href="https://betclic.com/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
+                        {% endfor %}
                     {% else %}
-                        <a href="https://{{ websiteUrl }}/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
+                        <div class="hppronos__prono__content-nobet">
+                            Pas de pari sûr aujourd'hui !
+                        </div>
                     {% endif %}
-                </div>
+                {% endif %}
+                {% if todayPronoSafes %}
+                    <div class="hppronos__prono__content-bet">
+                        <div class="hppronos__prono__content-bet-left">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                <img src="{{ asset('build/affiliate/betclic.png') }}"
+                                     alt="betclic"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% else %}
+                                <img src="{{ asset('build/affiliate/'~website~'.png') }}"
+                                     alt="{{ website }}"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% endif %}
+                        </div>
+                        <div class="hppronos__prono__content-bet-center">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                1.25
+                            {% else %}
+                                {{ odd }}
+                            {% endif %}
+                        </div>
+                        {% if not app.user or app.user.vipStatus is same as ('default') %}
+                            <a href="https://betclic.com/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% else %}
+                            <a href="https://{{ websiteUrl }}/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="hppronos__prono">
@@ -288,110 +296,117 @@
                         </div>
                     </div>
                 {% else %}
-                    {#Set var before loop because variables defined inside a loop are scoped to that loop#}
-                    {% set odd = '' %}
-                    {% set website = '' %}
-                    {% set websiteUrl = '' %}
-                    {% set oddsArray = [] %}
+                    {% if pronoComboSafes %}
+                        {#Set var before loop because variables defined inside a loop are scoped to that loop#}
+                        {% set odd = '' %}
+                        {% set website = '' %}
+                        {% set websiteUrl = '' %}
+                        {% set oddsArray = [] %}
 
-                    {% for pronoComboSafe in pronoComboSafes %}
-                        {# set vars#}
-                        {% set countryAndLeague = pronoComboSafe.countryAndLeague | split('-') %}
-                        {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
-                        {% set homeTeam = pronoComboSafe.homeTeam  | replace({' ' : '-'}) | trim %}
-                        {% set visitorTeam = pronoComboSafe.visitorTeam  | replace({' ' : '-'}) | trim %}
-                        {% set website = pronoComboSafe.website %}
-                        {% set websiteUrl = pronoComboSafe.websiteUrl %}
-                        {% set oddsArray = oddsArray|merge([pronoComboSafe.odd]) %}
+                        {% for pronoComboSafe in pronoComboSafes %}
+                            {# set vars#}
+                            {% set countryAndLeague = pronoComboSafe.countryAndLeague | split('-') %}
+                            {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
+                            {% set homeTeam = pronoComboSafe.homeTeam  | replace({' ' : '-'}) | trim %}
+                            {% set visitorTeam = pronoComboSafe.visitorTeam  | replace({' ' : '-'}) | trim %}
+                            {% set website = pronoComboSafe.website %}
+                            {% set websiteUrl = pronoComboSafe.websiteUrl %}
+                            {% set oddsArray = oddsArray|merge([pronoComboSafe.odd]) %}
 
-                        <div class="hppronos__prono__content">
-                            <div class="hppronos__prono__content-date">
-                                {{ pronoComboSafe.date | format_date('full', locale='fr') }}
-                                <span class="hppronos__prono__content-date-span">à</span>
-                                {{ pronoComboSafe.time | format_time('short', locale='fr') }}
-                            </div>
-                            <div class="hppronos__prono__content-league-combo">
-                                {{ pronoComboSafe.countryAndLeague }}
-                            </div>
-                            <div class="hppronos__prono__content-logos-combo">
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <img src="{{ asset('build/container/' ~ pronoComboSafe.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
-                                         alt="logo {{ homeTeam }}">
+                            <div class="hppronos__prono__content">
+                                <div class="hppronos__prono__content-date">
+                                    {{ pronoComboSafe.date | format_date('full', locale='fr') }}
+                                    <span class="hppronos__prono__content-date-span">à</span>
+                                    {{ pronoComboSafe.time | format_time('short', locale='fr') }}
                                 </div>
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <div class="hppronos__prono__content-loto-combo">
-                                        <div class="hppronos__prono__content-loto-result
+                                <div class="hppronos__prono__content-league-combo">
+                                    {{ pronoComboSafe.countryAndLeague }}
+                                </div>
+                                <div class="hppronos__prono__content-logos-combo">
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <img src="{{ asset('build/container/' ~ pronoComboSafe.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
+                                             alt="logo {{ homeTeam }}">
+                                    </div>
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <div class="hppronos__prono__content-loto-combo">
+                                            <div class="hppronos__prono__content-loto-result
                                             {% if (pronoComboSafe.result|trim is same as ("gagne le match")) or
-                                            (pronoComboSafe.result|trim is same as ("gagne ou fait match nul")) %}
+                                                (pronoComboSafe.result|trim is same as ("gagne ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            1
-                                        </div>
-                                        <div class="hppronos__prono__content-loto-result
+                                                1
+                                            </div>
+                                            <div class="hppronos__prono__content-loto-result
                                             {% if (pronoComboSafe.result|trim is same as ("gagne ou fait match nul")) or
-                                            (pronoComboSafe.result|trim is same as ("perd ou fait match nul")) %}
+                                                (pronoComboSafe.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            N
-                                        </div>
-                                        <div class="hppronos__prono__content-loto-result-last
+                                                N
+                                            </div>
+                                            <div class="hppronos__prono__content-loto-result-last
                                             {% if (pronoComboSafe.result|trim is same as ("perd le match")) or
-                                            (pronoComboSafe.result|trim is same as ("perd ou fait match nul")) %}
+                                                (pronoComboSafe.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            2
+                                                2
+                                            </div>
+                                        </div>
+                                        <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                            <span class="hppronos__prono__content-loto-odd-combo-bold">{{ pronoComboSafe.odd }}</span>
                                         </div>
                                     </div>
-                                    <div class="hppronos__prono__content-loto-odd-combo">cote :
-                                        <span class="hppronos__prono__content-loto-odd-combo-bold">{{ pronoComboSafe.odd }}</span>
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <img src="{{ asset('build/container/' ~ pronoComboSafe.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
+                                             alt="logo {{ visitorTeam }}">
                                     </div>
                                 </div>
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <img src="{{ asset('build/container/' ~ pronoComboSafe.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
-                                         alt="logo {{ visitorTeam }}">
-                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-
-                <div class="hppronos__prono__content-bet">
-                    <div class="hppronos__prono__content-bet-left">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            <img src="{{ asset('build/affiliate/betclic.png') }}"
-                                 alt="betclic"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% else %}
-                            <img src="{{ asset('build/affiliate/'~website~'.png') }}"
-                                 alt="{{ website }}"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% endif %}
-                    </div>
-                    <div class="hppronos__prono__content-bet-center odd_combo_safe">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            4.30
-                        {% else %}
-                            {% set odd = 1 %}
-                            {% for odds in oddsArray %}
-                                {% set odd = odd*odds %}
-                            {% endfor %}
-                            {{ odd | number_format(2) }}
-                        {% endif %}
-                    </div>
-                    {% if not app.user or app.user.vipStatus is same as ('default') %}
-                        <a href="https://betclic/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
+                        {% endfor %}
                     {% else %}
-                        <a href="https://{{ websiteUrl }}/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
+                        <div class="hppronos__prono__content-nobet">
+                            Pas de combo sûr aujourd'hui !
+                        </div>
                     {% endif %}
-                </div>
+                {% endif %}
+                {% if pronoComboSafes %}
+                    <div class="hppronos__prono__content-bet">
+                        <div class="hppronos__prono__content-bet-left">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                <img src="{{ asset('build/affiliate/betclic.png') }}"
+                                     alt="betclic"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% else %}
+                                <img src="{{ asset('build/affiliate/'~website~'.png') }}"
+                                     alt="{{ website }}"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% endif %}
+                        </div>
+                        <div class="hppronos__prono__content-bet-center odd_combo_safe">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                4.30
+                            {% else %}
+                                {% set odd = 1 %}
+                                {% for odds in oddsArray %}
+                                    {% set odd = odd*odds %}
+                                {% endfor %}
+                                {{ odd | number_format(2) }}
+                            {% endif %}
+                        </div>
+                        {% if not app.user or app.user.vipStatus is same as ('default') %}
+                            <a href="https://betclic/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% else %}
+                            <a href="https://{{ websiteUrl }}/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="hppronos__prono">
@@ -510,110 +525,117 @@
                         </div>
                     </div>
                 {% else %}
-                    {#Set var before loop because variables defined inside a loop are scoped to that loop#}
-                    {% set odd = '' %}
-                    {% set website = '' %}
-                    {% set websiteUrl = '' %}
-                    {% set oddsArray = [] %}
+                    {% if pronoComboRiskys %}
+                        {#Set var before loop because variables defined inside a loop are scoped to that loop#}
+                        {% set odd = '' %}
+                        {% set website = '' %}
+                        {% set websiteUrl = '' %}
+                        {% set oddsArray = [] %}
 
-                    {% for pronoComboRisky in pronoComboRiskys %}
-                        {# set vars#}
-                        {% set countryAndLeague = pronoComboRisky.countryAndLeague | split('-') %}
-                        {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
-                        {% set homeTeam = pronoComboRisky.homeTeam  | replace({' ' : '-'}) | trim %}
-                        {% set visitorTeam = pronoComboRisky.visitorTeam  | replace({' ' : '-'}) | trim %}
-                        {% set website = pronoComboRisky.website %}
-                        {% set websiteUrl = pronoComboRisky.websiteUrl %}
-                        {% set oddsArray = oddsArray|merge([pronoComboRisky.odd]) %}
+                        {% for pronoComboRisky in pronoComboRiskys %}
+                            {# set vars#}
+                            {% set countryAndLeague = pronoComboRisky.countryAndLeague | split('-') %}
+                            {% set league = countryAndLeague[1]  | replace({' ' : ''}) | trim %}
+                            {% set homeTeam = pronoComboRisky.homeTeam  | replace({' ' : '-'}) | trim %}
+                            {% set visitorTeam = pronoComboRisky.visitorTeam  | replace({' ' : '-'}) | trim %}
+                            {% set website = pronoComboRisky.website %}
+                            {% set websiteUrl = pronoComboRisky.websiteUrl %}
+                            {% set oddsArray = oddsArray|merge([pronoComboRisky.odd]) %}
 
-                        <div class="hppronos__prono__content">
-                            <div class="hppronos__prono__content-date">
-                                {{ pronoComboRisky.date | format_date('full', locale='fr') }}
-                                <span class="hppronos__prono__content-date-span">à</span>
-                                {{ pronoComboRisky.time | format_time('short', locale='fr') }}
-                            </div>
-                            <div class="hppronos__prono__content-league-combo">
-                                {{ pronoComboRisky.countryAndLeague }}
-                            </div>
-                            <div class="hppronos__prono__content-logos-combo">
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <img src="{{ asset('build/container/' ~ pronoComboRisky.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
-                                         alt="logo {{ homeTeam }}">
+                            <div class="hppronos__prono__content">
+                                <div class="hppronos__prono__content-date">
+                                    {{ pronoComboRisky.date | format_date('full', locale='fr') }}
+                                    <span class="hppronos__prono__content-date-span">à</span>
+                                    {{ pronoComboRisky.time | format_time('short', locale='fr') }}
                                 </div>
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <div class="hppronos__prono__content-loto-combo">
-                                        <div class="hppronos__prono__content-loto-result
+                                <div class="hppronos__prono__content-league-combo">
+                                    {{ pronoComboRisky.countryAndLeague }}
+                                </div>
+                                <div class="hppronos__prono__content-logos-combo">
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <img src="{{ asset('build/container/' ~ pronoComboRisky.sport ~ '/logos/' ~ league ~ '/' ~ homeTeam ~ '.png') }}"
+                                             alt="logo {{ homeTeam }}">
+                                    </div>
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <div class="hppronos__prono__content-loto-combo">
+                                            <div class="hppronos__prono__content-loto-result
                                             {% if (pronoComboRisky.result|trim is same as ("gagne le match")) or
-                                            (pronoComboRisky.result|trim is same as ("gagne ou fait match nul")) %}
+                                                (pronoComboRisky.result|trim is same as ("gagne ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            1
-                                        </div>
-                                        <div class="hppronos__prono__content-loto-result
+                                                1
+                                            </div>
+                                            <div class="hppronos__prono__content-loto-result
                                             {% if (pronoComboRisky.result|trim is same as ("gagne ou fait match nul")) or
-                                            (pronoComboRisky.result|trim is same as ("perd ou fait match nul")) %}
+                                                (pronoComboRisky.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            N
-                                        </div>
-                                        <div class="hppronos__prono__content-loto-result-last
+                                                N
+                                            </div>
+                                            <div class="hppronos__prono__content-loto-result-last
                                             {% if (pronoComboRisky.result|trim is same as ("perd le match")) or
-                                            (pronoComboRisky.result|trim is same as ("perd ou fait match nul")) %}
+                                                (pronoComboRisky.result|trim is same as ("perd ou fait match nul")) %}
                                                 hppronos__prono__content-loto-result-crossed
                                             {% endif %}">
-                                            2
+                                                2
+                                            </div>
+                                        </div>
+                                        <div class="hppronos__prono__content-loto-odd-combo">cote :
+                                            <span class="hppronos__prono__content-loto-odd-combo-bold">{{ pronoComboRisky.odd }}</span>
                                         </div>
                                     </div>
-                                    <div class="hppronos__prono__content-loto-odd-combo">cote :
-                                        <span class="hppronos__prono__content-loto-odd-combo-bold">{{ pronoComboRisky.odd }}</span>
+                                    <div class="hppronos__prono__content-logo-combo">
+                                        <img src="{{ asset('build/container/' ~ pronoComboRisky.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
+                                             alt="logo {{ visitorTeam }}">
                                     </div>
                                 </div>
-                                <div class="hppronos__prono__content-logo-combo">
-                                    <img src="{{ asset('build/container/' ~ pronoComboRisky.sport ~ '/logos/' ~ league ~ '/' ~ visitorTeam ~ '.png') }}"
-                                         alt="logo {{ visitorTeam }}">
-                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-
-                <div class="hppronos__prono__content-bet">
-                    <div class="hppronos__prono__content-bet-left">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            <img src="{{ asset('build/affiliate/betclic.png') }}"
-                                 alt="betclic"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% else %}
-                            <img src="{{ asset('build/affiliate/'~website~'.png') }}"
-                                 alt="{{ website }}"
-                                 class="hppronos__prono__content-bet-left-img">
-                        {% endif %}
-                    </div>
-                    <div class="hppronos__prono__content-bet-center">
-                        {% if not app.user or app.user.vipStatus is same as ('default') %}
-                            15.70
-                        {% else %}
-                            {% set odd = 1 %}
-                            {% for odds in oddsArray %}
-                                {% set odd = odd*odds %}
-                            {% endfor %}
-                            {{ odd | number_format(2) }}
-                        {% endif %}
-                    </div>
-                    {% if not app.user or app.user.vipStatus is same as ('default') %}
-                        <a href="https://betclic.com/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
-                    {% else %}
-                        <a href="https://{{ websiteUrl }}/" target="_blank">
-                            <div class="hppronos__prono__content-bet-right">
-                                pariez maintenant
-                            </div>
-                        </a>
+                        {% endfor %}
                     {% endif %}
-                </div>
+                {% endif %}
+                {% if pronoComboRiskys %}
+                    <div class="hppronos__prono__content-bet">
+                        <div class="hppronos__prono__content-bet-left">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                <img src="{{ asset('build/affiliate/betclic.png') }}"
+                                     alt="betclic"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% else %}
+                                <img src="{{ asset('build/affiliate/'~website~'.png') }}"
+                                     alt="{{ website }}"
+                                     class="hppronos__prono__content-bet-left-img">
+                            {% endif %}
+                        </div>
+                        <div class="hppronos__prono__content-bet-center">
+                            {% if not app.user or app.user.vipStatus is same as ('default') %}
+                                15.70
+                            {% else %}
+                                {% set odd = 1 %}
+                                {% for odds in oddsArray %}
+                                    {% set odd = odd*odds %}
+                                {% endfor %}
+                                {{ odd | number_format(2) }}
+                            {% endif %}
+                        </div>
+                        {% if not app.user or app.user.vipStatus is same as ('default') %}
+                            <a href="https://betclic.com/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% else %}
+                            <a href="https://{{ websiteUrl }}/" target="_blank">
+                                <div class="hppronos__prono__content-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="hppronos__prono__content-nobet">
+                        Pas de combo risqué aujourd'hui !
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -25,6 +25,8 @@ class PronoComboSafeRepository extends ServiceEntityRepository
     public function findPronosComboSafeResult(): array
     {
         return $this->createQueryBuilder('p')
+            ->andWhere('p.date >= :date')
+            ->setParameter('date', Date('Y-m-d'))
             ->orderBy('p.date', 'ASC')
             ->getQuery()
             ->getResult();

@@ -25,6 +25,8 @@ class PronoComboRiskyRepository extends ServiceEntityRepository
     public function findPronosComboRiskyResult(): array
     {
         return $this->createQueryBuilder('p')
+            ->andWhere('p.date >= :date')
+            ->setParameter('date', Date('Y-m-d'))
             ->orderBy('p.date', 'ASC')
             ->getQuery()
             ->getResult();
