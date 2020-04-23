@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\ChartCurve;
+use App\Entity\ChartCurveResult;
 use App\Entity\PronoComboRisky;
 use App\Entity\PronoSur;
 use App\Entity\PronoComboSafe;

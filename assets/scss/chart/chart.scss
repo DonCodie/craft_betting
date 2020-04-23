@@ -11,6 +11,34 @@
   .chart {
     width: 100%;
     border: 1px solid $black;
+
+    &__titles {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      margin: 0 auto;
+      line-height: 50px;
+    }
+
+    &__title {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: $black;
+      font-weight: bold;
+
+      &-active {
+        color: $green;
+      }
+    }
+
+    &__curve {
+      display: block;
+    }
+
+    &__doughnut {
+      display: none;
+      padding-bottom: 15px;
+    }
   }
 }
 
