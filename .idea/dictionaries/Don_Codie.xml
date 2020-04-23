@@ -4,7 +4,9 @@
       <w>adresses</w>
       <w>affichage</w>
       <w>ajoute</w>
+      <w>ajouter</w>
       <w>boutons</w>
+      <w>cagnotte</w>
       <w>championnat</w>
       <w>changement</w>
       <w>cherche</w>
@@ -13,6 +15,7 @@
       <w>cliqué</w>
       <w>contenu</w>
       <w>couleur</w>
+      <w>courbe</w>
       <w>crypte</w>
       <w>création</w>
       <w>données</w>
@@ -25,14 +28,19 @@
       <w>fonction</w>
       <w>formulaire</w>
       <w>gagne</w>
+      <w>gagné</w>
       <w>gérer</w>
       <w>heure</w>
       <w>hppronos</w>
+      <w>jour</w>
       <w>liste</w>
+      <w>mises</w>
       <w>nouvel</w>
       <w>ouverture</w>
+      <w>pari</w>
       <w>perd</w>
       <w>persiste</w>
+      <w>pourcentage</w>
       <w>prono</w>
       <w>pronos</w>
       <w>pronostics</w>
@@ -40,19 +48,26 @@
       <w>redirige</w>
       <w>remplacement</w>
       <w>riskys</w>
+      <w>risqués</w>
       <w>rssbasket</w>
       <w>rssfootball</w>
       <w>rsstennis</w>
+      <w>résultat</w>
+      <w>réussis</w>
       <w>sauvegarde</w>
       <w>soumis</w>
+      <w>statistiques</w>
       <w>succès</w>
       <w>sucés</w>
       <w>supprime</w>
+      <w>supprimer</w>
       <w>sûrs</w>
       <w>tommorow</w>
       <w>utilisateur</w>
       <w>utilisateurs</w>
+      <w>éditer</w>
       <w>équipe</w>
+      <w>évolution</w>
     </words>
   </dictionary>
 </component>

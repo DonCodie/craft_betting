@@ -20,6 +20,7 @@ Encore
      * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('chart', './assets/js/chart.js')
     .addEntry('header', './assets/js/header.js')
     .addEntry('hppronos', './assets/js/hppronos.js')
     .addEntry('footer', './assets/js/footer.js')

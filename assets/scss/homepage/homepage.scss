@@ -1,15 +1,16 @@
 /* DESKTOP */
 @media screen and (min-width: $desktop) {
-  .tips-and-vip__container {
+  .tips-and-chart__container {
     width: 100%;
     height: auto;
     display: flex;
+    justify-content: space-evenly;
   }
 }
 
 /* TABLET */
 @media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
-  .tips-and-vip__container {
+  .tips-and-chart__container {
     width: 100%;
     height: auto;
     display: block;
@@ -18,7 +19,7 @@
 
 /* MOBILE */
 @media screen and (max-width: $mobile) {
-  .tips-and-vip__container {
+  .tips-and-chart__container {
     width: 100%;
     height: auto;
     display: block;

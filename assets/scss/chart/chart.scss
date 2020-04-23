@@ -1,0 +1,23 @@
+/* DESKTOP */
+@media screen and (min-width: $desktop) {
+  .chart {
+    width: 48%;
+    border: 1px solid $black;
+  }
+}
+
+/* TABLET */
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .chart {
+    width: 100%;
+    border: 1px solid $black;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: $mobile) {
+  .chart {
+    width: 100%;
+    border: 1px solid $black;
+  }
+}

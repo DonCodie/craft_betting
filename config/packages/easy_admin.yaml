@@ -12,6 +12,10 @@ easy_admin:
             - { entity: 'PronoComboSafe', icon: 'newspaper', label: 'Pronos Combo Sûrs (hp)' }
             - { entity: 'PronoComboRisky', icon: 'newspaper', label: 'Pronos Combo Risqués (hp)' }
 
+            - label: 'gérer les statistiques'
+            - { entity: 'ChartCurve', icon: 'chart-area', label: 'Courbe De Cagnotte' }
+            - { entity: 'Prono', icon: 'chart-pie', label: 'Pourcentage De Paris' }
+
             - label: 'gérer les sites partenaires'
             - label: 'Sites Web et Adresses'
               icon: 'folder'
@@ -150,6 +154,23 @@ easy_admin:
                     - { property: 'website', label: 'Site' }
                     - { property: 'websiteUrl', label: 'Adresse du site' }
                     - { property: 'analysis', type: 'textarea',  label: 'Analyse' }
+
+        ChartCurve:
+            class: App\Entity\ChartCurve
+            label: 'Courbe De Cagnotte'
+            list:
+                title: 'Liste Des Courbe De Cagnotte'
+                fields:
+                    - { property: 'odd', label: 'Cote' }
+                    - { property: 'result', label: 'Résultat' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
+            form:
+                fields:
+                    - { property: 'odd', label: 'Cote', type: 'number' }
+                    - { property: 'result', label: 'Résultat' }
 
         User:
             class: App\Entity\User

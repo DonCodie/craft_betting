@@ -1,0 +1,10 @@
+<div class="chart">
+    <canvas id="chart"></canvas>
+    <input type="hidden" id="dataLabels" value="{{ chartCurves }}">
+</div>
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    {{ encore_entry_script_tags('chart') }}
+{% endblock %}

@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200416094554 extends AbstractMigration
+final class Version20200423111013 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,9 @@ final class Version20200416094554 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE prono ADD date DATE NOT NULL');
+        $this->addSql('ALTER TABLE chart_curve ADD result_id INT NOT NULL');
+        $this->addSql('ALTER TABLE chart_curve ADD CONSTRAINT FK_B1A8E2EB7A7B643 FOREIGN KEY (result_id) REFERENCES chart_curve_result (id)');
+        $this->addSql('CREATE INDEX IDX_B1A8E2EB7A7B643 ON chart_curve (result_id)');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +32,8 @@ final class Version20200416094554 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE prono DROP date');
+        $this->addSql('ALTER TABLE chart_curve DROP FOREIGN KEY FK_B1A8E2EB7A7B643');
+        $this->addSql('DROP INDEX IDX_B1A8E2EB7A7B643 ON chart_curve');
+        $this->addSql('ALTER TABLE chart_curve DROP result_id');
     }
 }
