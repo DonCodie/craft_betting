@@ -25,7 +25,7 @@ var chartCurve = new Chart(curve, {
     data: {
         labels: dataX,
         datasets: [{
-            label: 'Évolution de la cagnotte pour des mises de 10€ par pari',
+            label: 'Évolution pour des mises de 10€ par pari',
             data: dataY,
             backgroundColor: ['rgba(90, 205, 130, 0.6)'],
             borderColor: ['rgba(90, 205, 130, 1)'],
@@ -154,11 +154,11 @@ $('.chart__title').click(function () {
     if ($(this).text() === 'cagnotte') {
         $('.chart__curve').css('display', 'block');
         $('.chart__doughnut').css('display', 'none');
-        $('.chart__bar').css('display', 'block');
+        $('.chart__bar').css('display', 'none');
     } else if ($(this).text() === '% paris réussis') {
         $('.chart__doughnut').css('display', 'block');
         $('.chart__curve').css('display', 'none');
-        $('.chart__bar').css('display', 'block');
+        $('.chart__bar').css('display', 'none');
     } else {
         $('.chart__bar').css('display', 'block');
         $('.chart__curve').css('display', 'none');

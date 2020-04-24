@@ -13,8 +13,7 @@ easy_admin:
             - { entity: 'PronoComboRisky', icon: 'newspaper', label: 'Pronos Combo Risqués (hp)' }
 
             - label: 'gérer les statistiques'
-            - { entity: 'ChartCurve', icon: 'chart-area', label: 'Courbe De Cagnotte' }
-            - { entity: 'Prono', icon: 'chart-pie', label: 'Pourcentage De Paris' }
+            - { entity: 'ChartCurve', icon: 'chart-area', label: 'Toutes les statistiques' }
 
             - label: 'gérer les sites partenaires'
             - label: 'Sites Web et Adresses'
@@ -48,6 +47,10 @@ easy_admin:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'website', label: 'Site Web' }
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
@@ -79,6 +82,10 @@ easy_admin:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'website', label: 'Site Web' }
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
@@ -110,6 +117,10 @@ easy_admin:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'website', label: 'Site Web' }
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
@@ -141,6 +152,10 @@ easy_admin:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'website', label: 'Site Web' }
                     - { property: 'websiteUrl', label: 'Adresse Site Web' }
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text'}}
@@ -179,6 +194,10 @@ easy_admin:
             label: 'Utilisateurs'
             list:
                 title: 'Liste des utilisateurs'
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'email', label: 'email', type: 'email'}
@@ -191,6 +210,10 @@ easy_admin:
             label: 'Sites Web Partenaires'
             list:
                 title: 'Liste des sites peb partenaires'
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'name', label: 'nom du site'}
@@ -200,6 +223,10 @@ easy_admin:
             label: 'Sites Web Partenaires'
             list:
                 title: 'Adresses des sites web partenaires'
+                actions:
+                    - { name: 'edit', icon: 'pencil', label: 'Éditer' }
+                    - { name: 'new',  label: 'Ajouter' }
+                    - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
                     - { property: 'url', label: 'adresse du site'}
