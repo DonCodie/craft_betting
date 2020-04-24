@@ -29,6 +29,11 @@ class ChartCurve
      */
     private $result;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,6 +59,18 @@ class ChartCurve
     public function setResult(?ChartCurveResult $result): self
     {
         $this->result = $result;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }

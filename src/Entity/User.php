@@ -157,8 +157,8 @@ class User implements UserInterface
         $this->vip_status = $vip_status;
     }
 
-    public function __toString()
+    public function __toString(): ?string
     {
-        return$this->username;
+        return $this->username;
     }
 }

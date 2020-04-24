@@ -34,5 +34,4 @@ $triangle.click(function () {
     } else if ($borderLeft === '20px solid rgb(255, 1, 1)') {
         $(this).css('border-left', '20px solid rgb(90, 205, 130)');
     }
-})
-;
+});

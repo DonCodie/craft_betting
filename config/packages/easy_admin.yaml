@@ -163,12 +163,14 @@ easy_admin:
                 fields:
                     - { property: 'odd', label: 'Cote' }
                     - { property: 'result', label: 'Résultat' }
+                    - { property: 'date', label: 'Date' }
                 actions:
                     - { name: 'edit', icon: 'pencil', label: 'Éditer' }
                     - { name: 'new',  label: 'Ajouter' }
                     - { name: 'delete', icon: 'trash', label: 'Supprimer' }
             form:
                 fields:
+                    - { property: 'date', label: 'Date', type: 'birthday', type_options: {widget: 'single_text' }}
                     - { property: 'odd', label: 'Cote', type: 'number' }
                     - { property: 'result', label: 'Résultat' }
 
@@ -201,8 +203,3 @@ easy_admin:
             form:
                 fields:
                     - { property: 'url', label: 'adresse du site'}
-
-#        - App\Entity\CountryAndLeague
-#        - App\Entity\Result
-#        - App\Entity\Sport
-#        - App\Entity\Team
