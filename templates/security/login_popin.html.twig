@@ -1,0 +1,22 @@
+<form action="{{ path('security_login') }}" method="post" class="form form__login">
+    <div class="form__content">
+        <div class="form__choices">
+            <a href="{{ path('security_register') }}">
+                <div class="form__choice">créer un compte</div>
+            </a>
+            <hr class="form__choice form__choice-hr">
+            <a href="{{ path('security_login') }}">
+            <div class="form__choice">connexion</div>
+            </a>
+        </div>
+        <div class="form__forgot-password">
+            <a href="">
+                mot de passe oublié ?
+            </a>
+        </div>
+    </div>
+</form>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('form') }}
+{% endblock %}

@@ -1,0 +1,62 @@
+.header {
+  width: 100%;
+  height: auto;
+
+  &__user {
+    width: 95%;
+    height: 50px;
+    padding: 10px 0 20px 0;
+
+    &-connexion {
+      display: flex;
+      justify-content: flex-end;
+
+      &-logo {
+        height: 50px;
+
+        &-img {
+          width: 50px;
+          height: 50px;
+          padding: 0 10px;
+        }
+      }
+
+      &-infos {
+        font-weight: bold;
+        line-height: 50px;
+      }
+    }
+
+    &-popin {
+      display: none;
+      width: 200px;
+      height: auto;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+
+      &-show {
+        display: block;
+      }
+    }
+  }
+
+  &__banner {
+    margin: 0 auto;
+
+    &--img-div {
+      @media only screen and (max-width: $mobile) {
+        height: 175px;
+        background: url("../../images/header/header_mobile.png") no-repeat center;
+      }
+      @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+        height: 300px;
+        background: url("../../images/header/header.png") no-repeat center;
+      }
+      @media only screen and (min-width: $desktop) {
+        height: 300px;
+        background: url("../../images/header/header.png") no-repeat center;
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.inscription {
+  width: 100%;
+  height: auto;
+  position: relative;
+  line-height: 75px;
+  text-align: center;
+  background-color: black;
+  color: $green;
+  animation: textgrowth linear 0.5s infinite alternate;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 14.5px;
+    line-height: 20px;
+    padding: 10px 0;
+  }
+  @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+    font-size: 15px;
+  }
+  @media only screen and (min-width: $desktop) {
+    font-size: 25px;
+  }
+
+  &__para {
+    @media only screen and (max-width: $mobile) {
+      width: 75%;
+      margin: 0 auto;
+    }
+    @media only screen and (min-width: $tablet-min) {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: url("../../images/inscription/arrow.png");
+    position: absolute;
+
+    @media only screen and (max-width: $mobile) {
+      top: 25%;
+      left: 2%;
+    }
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      top: 15%;
+      left: 2%;
+    }
+    @media only screen and (min-width: $desktop) {
+      top: 10%;
+      left: 19%;
+    }
+  }
+
+  &:after {
+    content: url("../../images/inscription/arrow.png");
+    position: absolute;
+
+    @media only screen and (max-width: $mobile) {
+      top: 25%;
+      right: 2%;
+    }
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      top: 15%;
+      right: 2%;
+    }
+    @media only screen and (min-width: $desktop) {
+      top: 10%;
+      right: 19%;
+    }
+  }
+}
+
+/* Animation */
+@media only screen and (max-width: $mobile) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 14.5px;
+    }
+    100% {
+      font-size: 15px;
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 15px;
+    }
+    100% {
+      font-size: 15.5px;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  @keyframes textgrowth {
+    0% {
+      font-size: 25px;
+    }
+    100% {
+      font-size: 25.5px;
+    }
+  }
+}

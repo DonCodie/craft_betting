@@ -1,0 +1,38 @@
+button {
+  text-transform: uppercase;
+  line-height: 35px;
+  width: 60%;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    cursor: pointer;
+    color: $white;
+  }
+
+  &.btn-hover-diamond {
+    &:hover {
+      background-color: rgba(112, 209, 244, 0.5);
+    }
+  }
+
+  &.btn-hover-gold {
+    &:hover {
+      background-color: rgba(255, 215, 0, 0.5);
+    }
+  }
+
+  &.btn-hover-green {
+    &:hover {
+      background-color: rgba(90, 205, 130, 0.5);
+    }
+  }
+
+  &.btn-hover-silver {
+    &:hover {
+      background-color: rgba(166, 172, 175, 0.5);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.breadcrumb {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $green;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    color: $black;
+    font-weight: bold;
+
+    &-logo {
+      width: 25px;
+      height: 25px;
+      padding-right: 3px;
+      background: url("../../images/breadcrumb/home_logo.png") no-repeat;
+
+      &:hover {
+        background: url("../../images/breadcrumb/home_logo-hover.png") no-repeat;
+      }
+    }
+
+    &-separator {
+      letter-spacing: 1px;
+    }
+
+    &-path {
+      letter-spacing: 1px;
+    }
+
+    &-link {
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

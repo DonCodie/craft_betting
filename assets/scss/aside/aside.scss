@@ -1,0 +1,118 @@
+.aside {
+  width: 20%;
+  height: auto;
+
+  &__section {
+    width: 100%;
+    height: auto;
+    border-right: 1px solid $black;
+  }
+
+  &__section-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid $black;
+  }
+
+  &__section-subtitle {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 15px;
+  }
+
+  &__items {
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    border-bottom: 1px solid $black;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 10px;
+    color: $black;
+
+    &:hover {
+      background-color: $green;
+      cursor: pointer;
+    }
+  }
+
+  &__item-logo {
+    width: 55px;
+    height: 40px;
+
+    &-foot {
+      background: url("../../images/aside/sports/foot.png") no-repeat;
+    }
+
+    &-basket {
+      background: url("../../images/aside/sports/basket.png") no-repeat;
+    }
+
+    &-tennis {
+      background: url("../../images/aside/sports/tennis.png") no-repeat;
+    }
+
+    &-ldc {
+      background: url("../../images/aside/competitions/foot/ldc.png") no-repeat;
+    }
+
+    &-europa {
+      background: url("../../images/aside/competitions/foot/europa.png") no-repeat;
+    }
+
+    &-l1 {
+      background: url("../../images/aside/competitions/foot/l1.png") no-repeat;
+    }
+
+    &-l2 {
+      background: url("../../images/aside/competitions/foot/l2.png") no-repeat;
+    }
+
+    &-ligua {
+      background: url("../../images/aside/competitions/foot/ligua.png") no-repeat;
+    }
+
+    &-premierleague {
+      background: url("../../images/aside/competitions/foot/premierleague.png") no-repeat;
+    }
+
+    &-bundesliga {
+      background: url("../../images/aside/competitions/foot/bundesliga.png") no-repeat;
+    }
+
+    &-seria {
+      background: url("../../images/aside/competitions/foot/seria.png") no-repeat;
+    }
+
+    &-nba {
+      background: url("../../images/aside/competitions/basket/nba.png") no-repeat;
+    }
+
+    &-atp {
+      background: url("../../images/aside/competitions/tennis/atp.png") no-repeat;
+    }
+  }
+
+  &__item-title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

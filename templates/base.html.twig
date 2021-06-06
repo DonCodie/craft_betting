@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>{% block title %}Accueil{% endblock %}</title>
+    {% block link %}<link rel="icon" href="{{ asset('build/favicon/favicon.png') }}" type="image/x-icon"/>{% endblock %}
+    {% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+</head>
+<body>
+{% block header %}{% include 'block/header.html.twig' %}{% endblock %}
+{% block inscription %}{% include 'block/inscription.html.twig' %}{% endblock %}
+{% block affiliate %}{% include 'block/affiliate.html.twig' %}{% endblock %}
+{% block menu %}{% include 'block/menu.html.twig' %}{% endblock %}
+{% block container %}{% endblock %}
+{% block footer %}{% include 'block/footer.html.twig' %}{% endblock %}
+{% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
+</body>
 </html>

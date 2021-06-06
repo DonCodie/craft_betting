@@ -13,7 +13,7 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
-
+    .copyFiles({from: './assets/images'})
     /*
      * ENTRY CONFIG
      *
@@ -21,11 +21,33 @@ Encore
      * (including one that's included on every page - e.g. "app")
      *
      * Each entry will result in one JavaScript file (e.g. app.js)
-     * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
+     * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
-    //.addEntry('page1', './assets/js/page1.js')
-    //.addEntry('page2', './assets/js/page2.js')
+    .addEntry('footer', './assets/js/footer.js')
+    .addEntry('form', './assets/js/form.js')
+    .addEntry('header', './assets/js/header.js')
+    .addEntry('rss', './assets/js/rss.js')
+
+    // add fonts directory
+    // .addLoader({
+    //     test: /\.(woff|woff2|eot|ttf|otf)$/,
+    //     use: [
+    //         {
+    //             loader: 'file-loader',
+    //             options: {
+    //                 outputPath: 'assets/fonts'
+    //             }
+    //         }
+    //     ]
+    // })
+    .configureFilenames({
+        fonts: 'fonts/[name].[ext]'
+    })
+
+    // .addPlugin(new CopyWebpackPlugin([
+    //     { from: './assets/fonts', to: 'fonts' }
+    // ]))
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -54,7 +76,7 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+    .enableSassLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -64,7 +86,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()

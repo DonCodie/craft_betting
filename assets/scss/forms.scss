@@ -1,0 +1,124 @@
+.form {
+  padding: 2px;
+  border: 1px solid $black;
+  background-color: $green;
+  border-radius: 5px;
+
+  &__login {
+    display: block;
+  }
+
+  &__register {
+    display: none;
+  }
+
+  &__choices {
+    padding-bottom: 10px;
+  }
+
+  &__choice {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 15px;
+
+    &:hover {
+      color: $green;
+    }
+
+    &-hr {
+      width: 25%;
+    }
+  }
+
+  &__content {
+    padding-top: 10px;
+    background-color: $white;
+    border: 1px solid $black;
+    border-radius: 5px;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 10px;
+
+    &-password {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 3px;
+      right: 15px;
+    }
+
+    &-label {
+      position: absolute;
+      top: 10px;
+      margin-left: 10px;
+      padding: 0 10px;
+      font-size: 14px;
+      color: $silver;
+      transition: top .2s ease-in-out, font-size .2s ease-in-out, background-color .2s ease-in-out;
+    }
+
+    &-input {
+      width: 85%;
+      height: 30px;
+      font-size: 13px;
+      padding-left: 10px;
+
+      &:focus {
+        outline-color: $green;
+        background-color: $white;
+      }
+    }
+
+    &-submit {
+      text-transform: uppercase;
+      height: 30px;
+      background-color: rgba(90, 205, 130, 0.7);
+      font-weight: bold;
+    }
+  }
+
+  &__forgot-password {
+    color: $diamond;
+  }
+}
+
+.form__item-label.active {
+  top: -10px;
+  padding: 0 10px;
+  font-size: 15px;
+  background-color: $white;
+}
+
+@-webkit-keyframes autofill {
+  0%,100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s;
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: unset;
+  margin-block-start: unset;
+  margin-block-end: unset;
+  margin-inline-start: unset;
+  margin-inline-end: unset;
+  padding-inline-start: unset;
+
+  & li {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    color: $red;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,24 @@
+<div class="breadcrumb">
+    <div class="breadcrumb__text">
+        <span>
+            <a href="{{ path('homepage') }}">
+                <div class="breadcrumb__text-logo"></div>
+            </a>
+        </span>
+        {% for breadcrumb in breadcrumb() %}
+            {% if breadcrumb.link != 'accueil' %}
+                <div>
+                    <span class="breadcrumb__text-separator">/</span>
+                    <span class="breadcrumb__text-path">
+                        {% if not loop.last %}
+                            <a href="{{ app.request.getSchemeAndHttpHost() ~ '/' ~ breadcrumb.link }}"
+                               class="breadcrumb__text-link">
+                        {% endif %}
+                            {{ breadcrumb.text }}
+                            </a>
+                    </span>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

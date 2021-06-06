@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tennis{% endblock %}
+{% block container %}
+
+    <div class="container">
+        {% include 'utils/breadcrumb.html.twig' %}
+        <div class="container__sports">
+            <div class="container__sports-left-tennis"></div>
+            <div class="container__sports-center">
+                {% include 'block/aside.html.twig' %}
+                {#                <div class="container__sports-center-maintitle">#}
+                {#                    <h1>pronostic football</h1>#}
+                {#                </div>#}
+                <div class="container__sports-center-prono">
+                    <div class="container__sports-center-prono-date">
+                        28/04 - 15:30
+                    </div>
+                    <div class="container__sports-center-prono-league">
+                        france - rolland garros
+                    </div>
+                    <div class="container__sports-center-prono-logos">
+                        <div class="container__sports-center-prono-logo">
+                            <img src="{{ asset('build/container/tennis/logos/atp/federer.jpg') }}" alt="???">
+                        </div>
+                        <div class="container__sports-center-prono-logo">
+                            <img src="{{ asset('build/container/tennis/logos/atp/nadal.jpg') }}" alt="???">
+                        </div>
+                    </div>
+                    <div class="container__sports-center-prono-teams">
+                        <div class="container__sports-center-prono-team">
+                            roger federer
+                        </div>
+                        <div class="container__sports-center-prono-team">
+                            rafael nadal
+                        </div>
+                    </div>
+                    <div class="container__sports-center-prono-text">
+                        notre prono :
+                    </div>
+                    <div class="container__sports-center-prono-subtext">
+                        <span class="capitalize">federer</span> gagne le match
+                    </div>
+                    <div class="container__sports-center-prono-loto">
+                        <div class="container__sports-center-prono-loto-result container__sports-center-prono-loto-result-crossed">
+                            1
+                        </div>
+                        <div class="container__sports-center-prono-loto-result-last">2</div>
+                    </div>
+                    <div class="container__sports-center-prono-bet">
+                        <div class="container__sports-center-prono-bet-left">
+                            <img src="{{ asset('build/affiliate/betclic.png') }}" alt="???"
+                                 class="container__sports-center-prono-bet-left-img">
+                        </div>
+                        <div class="container__sports-center-prono-bet-center">
+                            2.50
+                        </div>
+                        <a href="">
+                            <div class="container__sports-center-prono-bet-right">
+                                pariez maintenant
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container__sports-right-tennis"></div>
+        </div>
+    </div>
+
+{% endblock %}

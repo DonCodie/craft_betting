@@ -1,0 +1,184 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Football{% endblock %}
+{% block container %}
+
+    <div class="container">
+        {% include 'utils/breadcrumb.html.twig' %}
+        <div class="container__sports">
+            <div class="container__sports-left-foot"></div>
+            <div class="container__sports-center">
+                {% include 'block/aside.html.twig' %}
+                {#                <div class="container__sports-center-maintitle">#}
+                {#                    <h1>pronostic football</h1>#}
+                {#                </div>#}
+                <div class="container__sports-center-pronos">
+{#                    <h1>pronostic football</h1>#}
+                    <div class="container__sports-center-prono">
+                        <div class="container__sports-center-prono-date">
+                            28/04 - 15:30
+                        </div>
+                        <div class="container__sports-center-prono-league">
+                            france - ligue 1
+                        </div>
+                        <div class="container__sports-center-prono-logos">
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lille.png') }}" alt="???">
+                            </div>
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/lyon.png') }}" alt="???">
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-teams">
+                            <div class="container__sports-center-prono-team">
+                                lille olympique sporting club
+                            </div>
+                            <div class="container__sports-center-prono-team">
+                                olympique lyonnais
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-text">
+                            notre prono :
+                        </div>
+                        <div class="container__sports-center-prono-subtext">
+                            <span class="capitalize">lille</span> gagne le match ou match nul
+                        </div>
+                        <div class="container__sports-center-prono-loto">
+                            <div class="container__sports-center-prono-loto-result container__sports-center-prono-loto-result-crossed">
+                                1
+                            </div>
+                            <div class="container__sports-center-prono-loto-result container__sports-center-prono-loto-result-crossed">
+                                N
+                            </div>
+                            <div class="container__sports-center-prono-loto-result-last">2</div>
+                        </div>
+                        <div class="container__sports-center-prono-bet">
+                            <div class="container__sports-center-prono-bet-left">
+                                <img src="{{ asset('build/affiliate/betclic.png') }}" alt="???"
+                                     class="container__sports-center-prono-bet-left-img">
+                            </div>
+                            <div class="container__sports-center-prono-bet-center">
+                                1.66
+                            </div>
+                            <a href="">
+                                <div class="container__sports-center-prono-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container__sports-center-prono">
+                        <div class="container__sports-center-prono-date">
+                            29/04 - 21:00
+                        </div>
+                        <div class="container__sports-center-prono-league">
+                            france - ligue 1
+                        </div>
+                        <div class="container__sports-center-prono-logos">
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/nantes.png') }}" alt="???">
+                            </div>
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/bordeaux.png') }}" alt="???">
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-teams">
+                            <div class="container__sports-center-prono-team">
+                                football club de nantes
+                            </div>
+                            <div class="container__sports-center-prono-team">
+                                girondins de bordeaux
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-text">
+                            notre prono :
+                        </div>
+                        <div class="container__sports-center-prono-subtext">
+                            <span class="capitalize">bordeaux</span> gagne le match
+                        </div>
+                        <div class="container__sports-center-prono-loto">
+                            <div class="container__sports-center-prono-loto-result">
+                                1
+                            </div>
+                            <div class="container__sports-center-prono-loto-result">
+                                N
+                            </div>
+                            <div class="container__sports-center-prono-loto-result-last container__sports-center-prono-loto-result-crossed">
+                                2
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-bet">
+                            <div class="container__sports-center-prono-bet-left">
+                                <img src="{{ asset('build/affiliate/betclic.png') }}" alt="???"
+                                     class="container__sports-center-prono-bet-left-img">
+                            </div>
+                            <div class="container__sports-center-prono-bet-center">
+                                1.66
+                            </div>
+                            <a href="">
+                                <div class="container__sports-center-prono-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="container__sports-center-prono">
+                        <div class="container__sports-center-prono-date">
+                            29/04 - 21:00
+                        </div>
+                        <div class="container__sports-center-prono-league">
+                            france - ligue 1
+                        </div>
+                        <div class="container__sports-center-prono-logos">
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/marseille.png') }}" alt="???">
+                            </div>
+                            <div class="container__sports-center-prono-logo">
+                                <img src="{{ asset('build/container/foot/logos/ligue1/paris.png') }}" alt="???">
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-teams">
+                            <div class="container__sports-center-prono-team">
+                                olympique de marseille
+                            </div>
+                            <div class="container__sports-center-prono-team">
+                                paris saint germain
+                            </div>
+                        </div>
+                        <div class="container__sports-center-prono-text">
+                            notre prono :
+                        </div>
+                        <div class="container__sports-center-prono-subtext">
+                            <span class="capitalize">marseille</span> gagne le match
+                        </div>
+                        <div class="container__sports-center-prono-loto">
+                            <div class="container__sports-center-prono-loto-result container__sports-center-prono-loto-result-crossed">
+                                1
+                            </div>
+                            <div class="container__sports-center-prono-loto-result">
+                                N
+                            </div>
+                            <div class="container__sports-center-prono-loto-result-last">2</div>
+                        </div>
+                        <div class="container__sports-center-prono-bet">
+                            <div class="container__sports-center-prono-bet-left">
+                                <img src="{{ asset('build/affiliate/betclic.png') }}" alt="???"
+                                     class="container__sports-center-prono-bet-left-img">
+                            </div>
+                            <div class="container__sports-center-prono-bet-center">
+                                2.80
+                            </div>
+                            <a href="">
+                                <div class="container__sports-center-prono-bet-right">
+                                    pariez maintenant
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__sports-right-foot"></div>
+        </div>
+    </div>
+
+{% endblock %}
